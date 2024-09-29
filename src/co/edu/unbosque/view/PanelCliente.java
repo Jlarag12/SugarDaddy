@@ -12,10 +12,8 @@ import javax.swing.SwingConstants;
 public class PanelCliente extends JPanel
 {
 
-	private JLabel lblIdC;
-	private JLabel lblContraseñaC;
-	private JTextArea txtIdC;
-	private JTextArea txtContraseñaC;
+	private JLabel lblIdC,lblContraseñaC;
+	private JTextArea txtIdC,txtContraseñaC;
 	private JButton btnIngresarC;
 	
 	public PanelCliente() 

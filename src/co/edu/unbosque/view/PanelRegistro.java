@@ -13,15 +13,8 @@ import javax.swing.SwingContainer;
 public class PanelRegistro extends JPanel
 {
 
-	private JLabel lblIntruccionR;
-	private JLabel lblIdR;
-	private JLabel lblNombreR;
-	private JLabel lblContraseñaR;
-	private JLabel lblCupoR;
-	private JTextArea txtIdR;
-	private JTextArea txtNombreR;
-	private JTextArea txtContraseñaR;
-	private JTextArea txtCupoR;
+	private JLabel lblIntruccionR,lblIdR,lblNombreR,lblContraseñaR,lblCupoR;
+	private JTextArea txtIdR,txtNombreR,txtContraseñaR,txtCupoR;
 	private JButton btnRegistroR;
 	
 	public PanelRegistro ()
