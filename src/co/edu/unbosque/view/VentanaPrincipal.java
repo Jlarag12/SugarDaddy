@@ -11,6 +11,7 @@ public class VentanaPrincipal extends JFrame {
 	private PanelCliente panelC;
 	private PanelClienteSugar PanelS;
 	private PanelRegistro panelR;
+	private PanelAdmin PanelA;
 	
 	public VentanaPrincipal()
 	{
@@ -41,6 +42,9 @@ public class VentanaPrincipal extends JFrame {
 		
 		panelR = new  PanelRegistro();
 		getContentPane().add(panelR);
+		
+		PanelA = new PanelAdmin();
+		getContentPane().add(PanelA);
 	}
 
 }
