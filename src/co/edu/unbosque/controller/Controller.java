@@ -8,9 +8,11 @@ import co.edu.unbosque.model.dto.ClienteDTO;
 import co.edu.unbosque.model.persistence.ArchivoClientes;
 import co.edu.unbosque.model.persistence.ArchivoLog;
 import co.edu.unbosque.model.persistence.ArchivoParejas;
+import co.edu.unbosque.view.VentanaPrincipal;
 
 public class Controller {
 
+	VentanaPrincipal ventana = new  VentanaPrincipal();
 	ArchivoLog archivo = new ArchivoLog();
 	ArchivoClientes archivoClientes = new ArchivoClientes();
 	ArchivoParejas arcparejas = new ArchivoParejas();

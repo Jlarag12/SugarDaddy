@@ -12,14 +12,15 @@ import javax.swing.SwingConstants;
 public class PanelCliente extends JPanel
 {
 
-	private JLabel lblTituloC;
-	private JLabel lblInstruccionC;
-	private JTextArea txtIdentidadC;
+	private JLabel lblIdC;
+	private JLabel lblContraseñaC;
+	private JTextArea txtIdC;
+	private JTextArea txtContraseñaC;
 	private JButton btnIngresarC;
 	
 	public PanelCliente() 
 	{
-		setLayout(new GridLayout(4,1));
+		setLayout(new GridLayout(5,1));
 		setBackground(Color.white);
 		setBounds(20, 30, 450, 450);
 		inicialiarComponentes();
@@ -29,18 +30,23 @@ public class PanelCliente extends JPanel
 	
 	public void inicialiarComponentes()
 	{
-		lblTituloC = new JLabel("Cliente", SwingConstants.CENTER);
-		//lblTituloC.setOpaque(true);
-		//lblTituloC.setBackground(Color.green);
-		add(lblTituloC);
 		
-		lblInstruccionC = new JLabel("Ingrese su numero de identidad: ", SwingConstants.CENTER);
-		//lblInstruccionC.setOpaque(true);
-		//lblInstruccionC.setBackground(Color.green);
-		add(lblInstruccionC);
 		
-		txtIdentidadC = new JTextArea();
-		add(txtIdentidadC);
+		lblIdC = new JLabel("Ingrese su ID: ", SwingConstants.CENTER);
+		lblIdC.setOpaque(true);
+		lblIdC.setBackground(Color.green);
+		add(lblIdC);
+		
+		txtIdC = new JTextArea();
+		add(txtIdC);
+		
+		lblContraseñaC = new JLabel("Ingrese si Contraseña:", SwingConstants.CENTER);
+		lblContraseñaC.setOpaque(true);
+		lblContraseñaC.setBackground(Color.green);
+		add(lblContraseñaC);
+		
+		txtContraseñaC = new JTextArea();
+		add(txtContraseñaC);
 		
 		btnIngresarC = new JButton("Ingresar");
 		add(btnIngresarC);

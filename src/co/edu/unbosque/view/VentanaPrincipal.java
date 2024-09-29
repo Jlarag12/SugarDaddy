@@ -8,6 +8,7 @@ public class VentanaPrincipal extends JFrame {
 	
 	private PanelUsuario panelU;
 	private PanelCliente panelC;
+	private PanelRegistro panelR;
 	
 	public VentanaPrincipal()
 	{
@@ -20,17 +21,21 @@ public class VentanaPrincipal extends JFrame {
 		inicializarComponentes();
 		
 		setResizable(false);
+		//setUndecorated(true);
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
 	
 	public void inicializarComponentes()
 	{
-		/*panelU = new PanelUsuario();
+		panelU = new PanelUsuario();
 		getContentPane().add(panelU);
-		*/
+		
 		panelC = new PanelCliente();
 		getContentPane().add(panelC);
+		
+		panelR = new  PanelRegistro();
+		getContentPane().add(panelR);
 	}
 
 }
