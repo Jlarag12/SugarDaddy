@@ -47,4 +47,5 @@ public class Controller {
 		arcparejas.leerArchivo();
 		return arcparejas.getDatos().getProperty("vv");
 	}
+
 }
