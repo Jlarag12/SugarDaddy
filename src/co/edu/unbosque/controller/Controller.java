@@ -1,19 +1,20 @@
 package co.edu.unbosque.controller;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import co.edu.unbosque.model.dto.ClienteDTO;
 import co.edu.unbosque.model.persistence.ArchivoClientes;
 import co.edu.unbosque.model.persistence.ArchivoLog;
 import co.edu.unbosque.model.persistence.ArchivoParejas;
+import co.edu.unbosque.view.VentanaPrincipal;
 
 public class Controller {
 
 	ArchivoLog archivo = new ArchivoLog();
 	ArchivoClientes archivoClientes = new ArchivoClientes();
 	ArchivoParejas arcparejas = new ArchivoParejas();
+	VentanaPrincipal ventana;
+	
+	public void llamarVentanaPrincipal() {
+		ventana = new VentanaPrincipal();
+	}
 	
 	public void escribirArchivoPlano() {
 		archivo.escribirArchivo("Ingresar Texto");
@@ -46,5 +47,6 @@ public class Controller {
 	public String leerArchivoProp() throws IOException {
 		arcparejas.leerArchivo();
 		return arcparejas.getDatos().getProperty("vv");
+<<<<<<< HEAD
 	}*/
 }
