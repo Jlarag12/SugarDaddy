@@ -1,39 +1,38 @@
 package co.edu.unbosque.model.dao;
 
+import java.util.ArrayList;
+
 import co.edu.unbosque.model.Pareja;
 
 public class ParejaDAO implements InterfaceDAO<Pareja>{
 
 	@Override
-	public String getAll() {
+	public ArrayList<Pareja> consultar() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean add(Pareja x) {
+	public boolean agregar(Pareja x) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean delete(Pareja x) {
+	public boolean eliminar(Pareja x) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean update(Pareja x, Pareja y) {
+	public boolean actualizar(Pareja x, Pareja y) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public Pareja find(Pareja x) {
+	public Pareja encontrar(Pareja x) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
-
 }

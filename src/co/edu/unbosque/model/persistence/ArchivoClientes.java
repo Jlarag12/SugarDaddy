@@ -10,6 +10,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import co.edu.unbosque.model.Cliente;
 import co.edu.unbosque.model.dto.ClienteDTO;
 
 
@@ -29,7 +30,7 @@ public class ArchivoClientes {
 		}
 	}
 	
-	public void escribirArchivo(ArrayList<ClienteDTO> clientes) {
+	public void escribirArchivo(ArrayList<Cliente> clientes) {
 		try {
 			salida = new ObjectOutputStream(new FileOutputStream(ubicacionArchivo));
 			//ArrayList<ClienteDTO> datos = MapHandler.convertirVeterinariatoVeterinariaDTO(clientes);
@@ -42,13 +43,13 @@ public class ArchivoClientes {
 		}
 	}
 	
-	public ArrayList<ClienteDTO> leerArchivo(){
-		ArrayList<ClienteDTO> clientes = null;
+	public ArrayList<Cliente> leerArchivo(){
+		ArrayList<Cliente> clientes = null;
 		
 		if(ubicacionArchivo.length()!=0) {
 			try {
 				entrada = new ObjectInputStream(new FileInputStream(ubicacionArchivo));
-				clientes  = (ArrayList<ClienteDTO>) entrada.readObject();
+				clientes  = (ArrayList<Cliente>) entrada.readObject();
 				//clientes = MapHandler.convertirVeterinariaDTOtoVeterinaria(datos);
 			}catch (FileNotFoundException e) {
 				e.printStackTrace();

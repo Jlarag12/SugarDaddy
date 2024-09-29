@@ -23,7 +23,7 @@ public class Controller {
 		return archivo.leerArchivo();
 	}
 	
-	public void escribirArchivoBinario() {
+	/*public void escribirArchivoBinario() {
 		
 		ArrayList<ClienteDTO> clientes = new ArrayList<>();
 		ClienteDTO cliente = new ClienteDTO();
@@ -46,5 +46,5 @@ public class Controller {
 	public String leerArchivoProp() throws IOException {
 		arcparejas.leerArchivo();
 		return arcparejas.getDatos().getProperty("vv");
-	}
+	}*/
 }
