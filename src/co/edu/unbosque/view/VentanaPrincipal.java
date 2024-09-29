@@ -1,5 +1,6 @@
 package co.edu.unbosque.view;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 
 import javax.swing.JFrame;
@@ -8,6 +9,7 @@ public class VentanaPrincipal extends JFrame {
 	
 	private PanelUsuario panelU;
 	private PanelCliente panelC;
+	private PanelClienteSugar PanelS;
 	private PanelRegistro panelR;
 	
 	public VentanaPrincipal()
@@ -33,6 +35,9 @@ public class VentanaPrincipal extends JFrame {
 		
 		panelC = new PanelCliente();
 		getContentPane().add(panelC);
+		
+		PanelS = new PanelClienteSugar();
+		getContentPane().add(PanelS);
 		
 		panelR = new  PanelRegistro();
 		getContentPane().add(panelR);
