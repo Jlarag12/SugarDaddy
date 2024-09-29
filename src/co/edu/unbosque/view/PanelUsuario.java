@@ -7,13 +7,14 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 public class PanelUsuario extends JPanel
 {
-	private JLabel lblTitulo;
-	private JButton btnCliente;
-	private JButton btnAdministrador;
-	private JButton btnRegistrarse;
+	private JLabel lblTituloU;
+	private JButton btnClienteU;
+	private JButton btnAdministradorU;
+	private JButton btnRegistrarseU;
 	
 	public PanelUsuario() 
 	{
@@ -22,23 +23,24 @@ public class PanelUsuario extends JPanel
 		setBounds(20, 30, 450, 450);
 		inializarComponentes();
 		
-		setVisible(true);
+		setVisible(false);
 		
 	}
 	
 	public void inializarComponentes()
 	{
-		lblTitulo = new JLabel("Sugar APP");
-		add(lblTitulo);
+		lblTituloU = new JLabel("Sugar APP", SwingConstants.CENTER);
+		lblTituloU.setOpaque(true);
+		add(lblTituloU);
 		
-		btnCliente = new JButton("Cliente");
-		add(btnCliente);
+		btnClienteU = new JButton("Cliente");
+		add(btnClienteU);
 		
-		btnAdministrador = new JButton("Administrador");
-		add(btnAdministrador);
+		btnAdministradorU = new JButton("Administrador");
+		add(btnAdministradorU);
 		
-		btnRegistrarse = new JButton("Registrarse");
-		add(btnRegistrarse);
+		btnRegistrarseU = new JButton("Registrarse");
+		add(btnRegistrarseU);
 	}
 
 }

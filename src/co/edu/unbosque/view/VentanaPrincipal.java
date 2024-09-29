@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 public class VentanaPrincipal extends JFrame {
 	
 	private PanelUsuario panelU;
+	private PanelCliente panelC;
 	
 	public VentanaPrincipal()
 	{
@@ -25,9 +26,11 @@ public class VentanaPrincipal extends JFrame {
 	
 	public void inicializarComponentes()
 	{
-		panelU = new PanelUsuario();
+		/*panelU = new PanelUsuario();
 		getContentPane().add(panelU);
-		
+		*/
+		panelC = new PanelCliente();
+		getContentPane().add(panelC);
 	}
 
 }
