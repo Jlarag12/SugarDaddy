@@ -65,8 +65,6 @@ public class PanelClienteSugar extends JPanel
 		panel2S.setLayout(new GridLayout(2,1));
 		panel2S.setBackground(Color.green);
 		
-
-		
 		lblListaParejasS = new JLabel("Estas son tus parejas actuales");
 		lblListaParejasS.setOpaque(true);
 		lblListaParejasS.setBackground(Color.green);
