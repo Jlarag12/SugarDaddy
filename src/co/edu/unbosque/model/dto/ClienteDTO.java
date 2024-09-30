@@ -5,7 +5,7 @@ public class ClienteDTO extends UsuarioDTO{
 	private static final long serialVersionUID = 1L;
 	
 	private String numeroTarjeta;
-	private long cupo;
+	private double cupo;
 	
 	public String getNumeroTarjeta() {
 		return numeroTarjeta;
@@ -13,10 +13,10 @@ public class ClienteDTO extends UsuarioDTO{
 	public void setNumeroTarjeta(String numeroTarjeta) {
 		this.numeroTarjeta = numeroTarjeta;
 	}
-	public long getCupo() {
+	public double getCupo() {
 		return cupo;
 	}
-	public void setCupo(long cupo) {
+	public void setCupo(double cupo) {
 		this.cupo = cupo;
 	}
 }

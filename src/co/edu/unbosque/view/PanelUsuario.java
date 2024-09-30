@@ -12,9 +12,8 @@ import javax.swing.SwingConstants;
 public class PanelUsuario extends JPanel
 {
 	private JLabel lblTituloU;
-	private JButton btnClienteU;
-	private JButton btnAdministradorU;
-	private JButton btnRegistrarseU;
+	private JButton btnClienteU,btnAdministradorU,btnRegistrarseU;
+
 	
 	public PanelUsuario() 
 	{
@@ -23,7 +22,7 @@ public class PanelUsuario extends JPanel
 		setBounds(20, 30, 450, 450);
 		inializarComponentes();
 		
-		setVisible(false);
+		setVisible(true);
 		
 	}
 	

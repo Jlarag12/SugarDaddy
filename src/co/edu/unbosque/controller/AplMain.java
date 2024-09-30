@@ -8,8 +8,6 @@ public class AplMain {
 		System.out.println("Hola mundo, Suggar");
 		Controller controller = new Controller();
 		
-		controller.llamarVentanaPrincipal();
-
 	}
 
 }
