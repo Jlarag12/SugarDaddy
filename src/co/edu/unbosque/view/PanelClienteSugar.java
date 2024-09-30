@@ -13,7 +13,7 @@ import javax.swing.JTextArea;
 public class PanelClienteSugar extends JPanel
 {
 
-	private JPanel panel1S,panel2S, panelContenedorS;
+	private JPanel panel1S,panel2S;
 	private JLabel lblIngreParejaS, lblActuaParejaS, lblListaParejasS;
 	private JTextArea txtListaParejasS;
 	private JButton btnIngreParejaS, btnActuaParejaS;
