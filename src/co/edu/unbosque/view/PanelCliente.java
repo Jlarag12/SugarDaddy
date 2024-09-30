@@ -21,12 +21,12 @@ public class PanelCliente extends JPanel
 		setLayout(new GridLayout(5,1));
 		setBackground(Color.white);
 		setBounds(20, 30, 450, 450);
-		inicialiarComponentes();
+		inicializarComponentes();
 		
 		setVisible(false);
 	}
 	
-	public void inicialiarComponentes()
+	public void inicializarComponentes()
 	{
 		
 		
