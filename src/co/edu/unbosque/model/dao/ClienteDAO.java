@@ -1,79 +1,110 @@
 package co.edu.unbosque.model.dao;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 import co.edu.unbosque.model.Cliente;
+import co.edu.unbosque.model.dto.ClienteDTO;
 import co.edu.unbosque.model.persistence.ArchivoClientes;
+import co.edu.unbosque.model.utils.MapHandlerCliente;
 
-public class ClienteDAO implements InterfaceDAO<Cliente>{
 
-	ArrayList<Cliente> clientes;
-	ArchivoClientes archCliente;
-	
-	public ClienteDAO() {
-		archCliente = new ArchivoClientes();
-		if(clientes == null) {
-			clientes = new ArrayList<>();
-		}
-	}
+public class ClienteDAO implements InterfaceClienteDAO<Cliente> {
+
+    ArrayList<ClienteDTO> clientes;
+    ArchivoClientes archCliente;
+    
+    public ClienteDAO() {
+        archCliente = new ArchivoClientes();
+        ArrayList<ClienteDTO> listaClientes = archCliente.leerArchivo();
+        
+        if (listaClientes == null) {
+            clientes = new ArrayList<>();
+        } else {
+            clientes = new ArrayList<>();
+            for (ClienteDTO cliente : listaClientes) {
+                clientes.add(cliente);
+            }
+        }
+    }
 
 	@Override
 	public ArrayList<Cliente> consultar() {
-		return archCliente.leerArchivo();
+	    ArrayList<ClienteDTO> listaClientesDTO = archCliente.leerArchivo();
+	    ArrayList<Cliente> listaClientes = new ArrayList<>();
+	    
+	    for (ClienteDTO cliente : listaClientesDTO) {
+	        listaClientes.add(MapHandlerCliente.convertirClienteDTOACliente(cliente));
+	    }
+	    return listaClientes;
 	}
 
 	@Override
-	public boolean agregar(Cliente x) {
-		clientes.add(x);
-		archCliente.escribirArchivo(clientes);
-		return true;
+	public boolean agregar(Cliente cliente) {
+	    
+	    Cliente encontrado = encontrar(cliente);
+	    
+	    if(encontrado == null) {
+	    	clientes.add(MapHandlerCliente.convertirClienteAClienteDTO(cliente));
+		    archCliente.escribirArchivo(clientes);
+		    return true;
+	    }
+	    
+	    return false;
+	}
+	
+	@Override
+	public boolean eliminar(Cliente cliente) {
+	 
+		Cliente encontrado = encontrar(cliente); // Sigue usando el método encontrar
+	    if (encontrado != null) {
+	        clientes.remove(MapHandlerCliente.convertirClienteAClienteDTO(encontrado));
+	        archCliente.escribirArchivo(clientes);
+	        return true;
+	    }
+	    return false;
+	}
+	
+	@Override
+	public boolean actualizar(Cliente antiguoCliente, Cliente nuevoCliente) {
+
+		Cliente encontrado = encontrar(antiguoCliente);
+	    if (encontrado != null) {
+	        clientes.remove(MapHandlerCliente.convertirClienteAClienteDTO(antiguoCliente));
+	        ClienteDTO cliente = MapHandlerCliente.convertirClienteAClienteDTO(nuevoCliente);
+	        encontrado.setNombre(cliente.getNombre());
+	        encontrado.setCupo(cliente.getCupo());
+	        encontrado.setContrasena(cliente.getContrasena());
+	        clientes.add(MapHandlerCliente.convertirClienteAClienteDTO(encontrado));
+	        archCliente.escribirArchivo(clientes);
+	        return true;
+	    }
+	    return false;
+	}
+	
+	@Override
+	public Cliente encontrar(Cliente clienteBuscado) {
+        for (ClienteDTO cliente : clientes) {
+            if (cliente.getId() == clienteBuscado.getId()) {
+                return clienteBuscado;  
+            }
+        }
+        return null;
+    }
+
+	public ArrayList<ClienteDTO> getClientes() {
+		return clientes;
 	}
 
-	@Override
-	public boolean eliminar(Cliente x) {
-		Cliente y = encontrar(x);
-		if(y != null) {
-			try {
-				clientes.remove(y);
-				archCliente.getUbicacionArchivo().delete();
-				archCliente.getUbicacionArchivo().createNewFile();
-				archCliente.escribirArchivo(clientes);
-				return true;
-			}catch (IOException e) {
-				e.printStackTrace();
-				return false;
-			}
-		}
-		return false; 
+	public void setClientes(ArrayList<ClienteDTO> clientes) {
+		this.clientes = clientes;
 	}
 
-	@Override
-	public boolean actualizar(Cliente x, Cliente y) {
-		
-		Cliente e = encontrar(x);
-		if(e != null) {
-			clientes.remove(e);
-			e.setNombre(y.getNombre());
-			e.setCupo(y.getCupo());
-			e.setContrasena(y.getContrasena());
-			clientes.add(e);
-			return true;
-		}
-		return false;
+	public ArchivoClientes getArchCliente() {
+		return archCliente;
 	}
 
-	@Override
-	public Cliente encontrar(Cliente x) {
-		Cliente encontrado = null;
-		if(!clientes.isEmpty()) {
-			for(Cliente y : clientes) {
-				if( y.getId() == x.getId()) {
-					encontrado = y;
-				}
-			}
-		}
-		
-		return encontrado;
+	public void setArchCliente(ArchivoClientes archCliente) {
+		this.archCliente = archCliente;
 	}
 }
+

@@ -5,15 +5,15 @@ import java.io.Serializable;
 public class UsuarioDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-	private int id;
+
+	private long id;
 	private String nombre;
 	private String contrasena;
 	
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getNombre() {

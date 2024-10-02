@@ -1,15 +1,13 @@
 package co.edu.unbosque.model.dao;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import co.edu.unbosque.model.dto.ClienteDTO;
 
 public interface InterfaceDAO <T>{
 
-	ArrayList<T> consultar();
-	boolean agregar(T x);
-	boolean eliminar(T x);
-	boolean actualizar(T x, T y);
+	boolean eliminar(T x) throws IOException;
 	T encontrar(T x);
 	
 }

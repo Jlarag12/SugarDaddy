@@ -24,7 +24,7 @@ public class MapHandlerCliente {
 		cliente.setNombre(clienteDTO.getNombre());
 		cliente.setNumeroTarjeta(clienteDTO.getNumeroTarjeta());
 		cliente.setContrasena(clienteDTO.getContrasena());
-		cliente.setCupo(clienteDTO.getCupo());
+		cliente.setCupo((long) clienteDTO.getCupo());
 		
 		return cliente;		
 	}	

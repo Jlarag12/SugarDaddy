@@ -30,7 +30,7 @@ public class ArchivoClientes {
 		}
 	}
 	
-	public void escribirArchivo(ArrayList<Cliente> clientes) {
+	public void escribirArchivo(ArrayList<ClienteDTO> clientes) {
 		try {
 			salida = new ObjectOutputStream(new FileOutputStream(ubicacionArchivo));
 			//ArrayList<ClienteDTO> datos = MapHandler.convertirVeterinariatoVeterinariaDTO(clientes);
@@ -43,14 +43,13 @@ public class ArchivoClientes {
 		}
 	}
 	
-	public ArrayList<Cliente> leerArchivo(){
-		ArrayList<Cliente> clientes = null;
+	public ArrayList<ClienteDTO> leerArchivo(){
+		ArrayList<ClienteDTO> clientes = null;
 		
 		if(ubicacionArchivo.length()!=0) {
 			try {
 				entrada = new ObjectInputStream(new FileInputStream(ubicacionArchivo));
-				clientes  = (ArrayList<Cliente>) entrada.readObject();
-				//clientes = MapHandler.convertirVeterinariaDTOtoVeterinaria(datos);
+				clientes  = (ArrayList<ClienteDTO>) entrada.readObject();
 			}catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}catch(ClassNotFoundException e) {
