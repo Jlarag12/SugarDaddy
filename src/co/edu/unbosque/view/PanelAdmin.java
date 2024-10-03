@@ -11,13 +11,16 @@ import javax.swing.SwingConstants;
 
 public class PanelAdmin extends JPanel
 {
-	private JLabel lblIdA,lblContraseñaA;
-	private JTextArea txtIdA,txtContraseñaA;
+	private JLabel lblIdA;
+	private JLabel lblContraseñaA;
+	private JTextArea txtIdA;
+	private JTextArea txtContraseñaA;
 	private JButton btnIngresarA;
+	private JButton btnVolverA;
 	
 	public PanelAdmin() 
 	{
-		setLayout(new GridLayout(5,1));
+		setLayout(new GridLayout(6,1));
 		setBackground(Color.white);
 		setBounds(20, 30, 450, 450);
 		inicialiarComponentes();
@@ -47,6 +50,11 @@ public class PanelAdmin extends JPanel
 		
 		btnIngresarA = new JButton("Ingresar");
 		add(btnIngresarA);
+		
+		btnVolverA = new JButton("Volver");
+		btnVolverA.setOpaque(true);
+		btnVolverA.setBackground(Color.LIGHT_GRAY);
+		add(btnVolverA);
 		
 	}
 

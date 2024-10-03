@@ -13,10 +13,15 @@ import javax.swing.JTextArea;
 public class PanelClienteSugar extends JPanel
 {
 
-	private JPanel panel1S,panel2S;
-	private JLabel lblIngreParejaS, lblActuaParejaS, lblListaParejasS;
+	private JPanel panel1S;
+	private JPanel panel2S;
+	private JLabel lblIngreParejaS;
+	private JLabel lblActuaParejaS;
+	private JLabel lblListaParejasS;
 	private JTextArea txtListaParejasS;
-	private JButton btnIngreParejaS, btnActuaParejaS;
+	private JButton btnIngreParejaS;
+	private JButton btnActuaParejaS;
+	private JButton btnVolverS;
 	
 	public PanelClienteSugar()
 	{
@@ -62,7 +67,7 @@ public class PanelClienteSugar extends JPanel
 	public void inicializarPanel2()
 	{
 		panel2S = new JPanel();
-		panel2S.setLayout(new GridLayout(2,1));
+		panel2S.setLayout(new GridLayout(3,1));
 		panel2S.setBackground(Color.green);
 		
 		lblListaParejasS = new JLabel("Estas son tus parejas actuales");
@@ -79,6 +84,11 @@ public class PanelClienteSugar extends JPanel
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
         panel2S.add(scrollPane);
+        
+        btnVolverS = new JButton("Volver");
+        btnVolverS.setOpaque(true);
+        btnVolverS.setBackground(Color.LIGHT_GRAY);
+        panel2S.add(btnVolverS);
         
 
 	}

@@ -17,7 +17,7 @@ public class VentanaPrincipal extends JFrame {
 	public VentanaPrincipal()
 	{
 		setTitle("Sugar APP");
-		setSize(500, 550);
+		setSize(570, 650);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		getContentPane().setBackground(Color.green);
 		getContentPane().setLayout(null);

@@ -16,15 +16,16 @@ public class PanelRegistro extends JPanel
 	private JLabel lblIntruccionR,lblIdR,lblNombreR,lblContraseñaR,lblCupoR;
 	private JTextArea txtIdR,txtNombreR,txtContraseñaR,txtCupoR;
 	private JButton btnRegistroR;
+	private JButton btnVol
 	
 	public PanelRegistro ()
 	{
 		setLayout(new GridLayout(10,1));
 		setBackground(Color.white);
-		setBounds(20, 30, 450, 450);
+		setBounds(50, 40, 450, 500);
 		inicializarComponentes();
 		
-		setVisible(false);
+		setVisible(true);
 	}
 	
 	public void inicializarComponentes()

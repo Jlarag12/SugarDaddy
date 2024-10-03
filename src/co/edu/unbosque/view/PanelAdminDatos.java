@@ -12,10 +12,17 @@ import javax.swing.JTextArea;
 
 public class PanelAdminDatos extends JPanel
 {
-	private JPanel panel1D, panel2D;
+	private JPanel panel1D; 
+	private JPanel panel2D;
 	private JTextArea txtClientesD;
-	private JLabel lblCrearD, lblEliminarD, lblActualizarD, lblMostrarD;
-	private JButton btnCrearD, btnEliminarD, btnActualizarD;
+	private JLabel lblCrearD;  
+	private JLabel lblEliminarD;
+	private JLabel lblActualizarD;
+	private JLabel lblMostrarD;
+	private JButton btnCrearD;
+	private JButton btnEliminarD;
+	private JButton btnActualizarD;
+	private JButton btnVolver;
 	
 	public PanelAdminDatos()
 	{
@@ -28,7 +35,7 @@ public class PanelAdminDatos extends JPanel
 		add(panel1D);
 		add(panel2D);
 		
-		setVisible(true);
+		setVisible(false);
 	}
 	public void inicializarPanel1() 
 	{
@@ -65,7 +72,7 @@ public class PanelAdminDatos extends JPanel
 	public void inicializarPanel2()
 	{
 		panel2D = new JPanel();
-		panel2D.setLayout(new GridLayout(2,1));
+		panel2D.setLayout(new GridLayout(3,1));
 		panel2D.setBackground(Color.green);
 		
 		lblMostrarD = new JLabel("Todos los clientes registrados: ");
@@ -82,6 +89,11 @@ public class PanelAdminDatos extends JPanel
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		
         panel2D.add(scrollPane);
+        
+        btnVolver = new JButton("Volver");
+        btnVolver.setOpaque(true);
+        btnVolver.setBackground(Color.LIGHT_GRAY);
+        panel2D.add(btnVolver);
 	}
 	
 
