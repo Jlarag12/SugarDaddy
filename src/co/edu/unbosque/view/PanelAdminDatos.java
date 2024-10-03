@@ -90,7 +90,7 @@ public class PanelAdminDatos extends JPanel
 		
         panel2D.add(scrollPane);
         
-        btnVolverD = new JButton("Volver");
+        btnVolverD = new JButton("Volver a las credenciales");
         btnVolverD.setOpaque(true);
         btnVolverD.setBackground(Color.LIGHT_GRAY);
         panel2D.add(btnVolverD);

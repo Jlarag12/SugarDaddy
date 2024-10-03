@@ -30,6 +30,8 @@ public class ArchivoClientes {
 		}
 	}
 	
+	
+	
 	public void escribirArchivo(ArrayList<ClienteDTO> clientes) {
 		try {
 			salida = new ObjectOutputStream(new FileOutputStream(ubicacionArchivo));

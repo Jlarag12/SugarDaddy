@@ -85,7 +85,7 @@ public class PanelClienteSugar extends JPanel
 
         panel2S.add(scrollPane);
         
-        btnVolverS = new JButton("Volver");
+        btnVolverS = new JButton("Volver a las credenciales");
         btnVolverS.setOpaque(true);
         btnVolverS.setBackground(Color.LIGHT_GRAY);
         panel2S.add(btnVolverS);

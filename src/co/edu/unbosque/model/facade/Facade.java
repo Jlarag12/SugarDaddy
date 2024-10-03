@@ -20,6 +20,10 @@ public class Facade {
 			admin.setContrasena("pass1234");
 			admin.setNombre("Admin");
 		}
+		/*admin.setId(12345);
+		admin.setContrasena("pass1234");
+		admin.setNombre("Admin");
+		*/
 	}
 		
 	public Cliente encontrarCliente(Cliente cliente) {
@@ -50,4 +54,7 @@ public class Facade {
 	public boolean actualizar(Pareja parejaAntigua, Pareja parejaNueva, Cliente cliente) {
 		return parejaDAO.actualizar(parejaAntigua, parejaNueva, cliente);
 	}
+	/*public boolean verificarCliente(int id, String contraseña) {
+        return clienteDAO.verificarCliente(id, contraseña);
+    }*/
 }

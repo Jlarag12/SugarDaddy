@@ -25,7 +25,7 @@ public class PanelAdmin extends JPanel
 		setBounds(30, 60, 500, 470);
 		inicialiarComponentes();
 		
-		setVisible(true);
+		setVisible(false);
 	}
 	
 	public void inicialiarComponentes()
