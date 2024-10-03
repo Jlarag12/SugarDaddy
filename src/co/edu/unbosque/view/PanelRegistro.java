@@ -16,7 +16,7 @@ public class PanelRegistro extends JPanel
 	private JLabel lblIntruccionR,lblIdR,lblNombreR,lblContraseñaR,lblCupoR;
 	private JTextArea txtIdR,txtNombreR,txtContraseñaR,txtCupoR;
 	private JButton btnRegistroR;
-	private JButton btnVol
+	private JButton btnVolver;
 	
 	public PanelRegistro ()
 	{
