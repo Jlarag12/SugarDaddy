@@ -5,7 +5,7 @@ import co.edu.unbosque.model.Pareja;
 import co.edu.unbosque.model.dto.ClienteDTO;
 import co.edu.unbosque.model.dto.ParejaDTO;
 
-public class MapHandler {
+public class MapHandlerCliente {
 	
 	public static ClienteDTO convertirClienteAClienteDTO(Cliente cliente) {
 		ClienteDTO clienteDTO = new ClienteDTO();
@@ -24,29 +24,8 @@ public class MapHandler {
 		cliente.setNombre(clienteDTO.getNombre());
 		cliente.setNumeroTarjeta(clienteDTO.getNumeroTarjeta());
 		cliente.setContrasena(clienteDTO.getContrasena());
-		cliente.setCupo(clienteDTO.getCupo());
+		cliente.setCupo((long) clienteDTO.getCupo());
 		
 		return cliente;		
-	}
-	
-	public static ParejaDTO convertirParejaParejaDTO(Pareja pareja) {
-		ParejaDTO parejaDTO = new ParejaDTO();
-		parejaDTO.setId(pareja.getId());
-		parejaDTO.setNombre(pareja.getNombre());
-		parejaDTO.setEdad(pareja.getEdad());
-		parejaDTO.setAsignacion(pareja.getAsignacion());
-		
-		return parejaDTO;		
-	}
-	
-	public static Pareja convertirParejaDTOAPareja(ParejaDTO parejaDTO) {
-		Pareja pareja = new Pareja();
-		pareja.setId(parejaDTO.getId());
-		pareja.setNombre(parejaDTO.getNombre());
-		pareja.setEdad(parejaDTO.getEdad());
-		pareja.setAsignacion(parejaDTO.getAsignacion());
-		
-		return pareja;		
-	}
-	
+	}	
 }

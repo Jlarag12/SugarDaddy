@@ -22,7 +22,7 @@ public class PanelUsuario extends JPanel
 		setBounds(20, 30, 450, 450);
 		inializarComponentes();
 		
-		setVisible(false);
+		setVisible(true);
 		
 	}
 	

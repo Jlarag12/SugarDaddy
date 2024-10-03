@@ -24,7 +24,7 @@ public class VentanaPrincipal extends JFrame {
 		
 		inicializarComponentes();
 		
-		setResizable(false);
+		setResizable(true);
 		//setUndecorated(true);
 		setLocationRelativeTo(null);
 		setVisible(true);
@@ -32,11 +32,11 @@ public class VentanaPrincipal extends JFrame {
 	
 	public void inicializarComponentes()
 	{
-		panelU = new PanelUsuario();
-		getContentPane().add(panelU);
+		/*panelU = new PanelUsuario();
+		getContentPane().add(panelU);*/
 		
-		panelC = new PanelCliente();
-		getContentPane().add(panelC);
+		/*panelC = new PanelCliente();
+		getContentPane().add(panelC);*/
 		
 		PanelS = new PanelClienteSugar();
 		getContentPane().add(PanelS);
@@ -51,4 +51,27 @@ public class VentanaPrincipal extends JFrame {
 		getContentPane().add(PanelD);
 	}
 
+	public PanelUsuario getPanelU() {
+		return panelU;
+	}
+
+	public void setPanelU(PanelUsuario panelU) {
+		this.panelU = panelU;
+	}
+
+	public PanelCliente getPanelC() {
+		return panelC;
+	}
+
+	public void setPanelC(PanelCliente panelC) {
+		this.panelC = panelC;
+	}
+
+	public PanelRegistro getPanelR() {
+		return panelR;
+	}
+
+	public void setPanelR(PanelRegistro panelR) {
+		this.panelR = panelR;
+	}
 }

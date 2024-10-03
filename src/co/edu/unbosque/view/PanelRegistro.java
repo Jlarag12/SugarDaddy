@@ -3,21 +3,24 @@ package co.edu.unbosque.view;
 import java.awt.Color;
 import java.awt.GridLayout;
 
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.SwingContainer;
+
 
 public class PanelRegistro extends JPanel
 {
 
 	private JLabel lblIntruccionR,lblIdR,lblNombreR,lblContraseñaR,lblCupoR;
-	private JTextArea txtIdR,txtNombreR,txtContraseñaR,txtCupoR;
+	private JTextArea txtIdR,txtNombreR,txtCupoR;
 	private JButton btnRegistroR;
 	private JButton btnVolver;
-	
+	private JTextField txtContraseñaR;
+
 	public PanelRegistro ()
 	{
 		setLayout(new GridLayout(10,1));
@@ -57,7 +60,7 @@ public class PanelRegistro extends JPanel
 		lblContraseñaR.setBackground(Color.green);
 		add(lblContraseñaR);
 		
-		txtContraseñaR = new JTextArea();
+		txtContraseñaR = new JTextField();
 		add(txtContraseñaR);
 		
 		lblCupoR = new JLabel("Ingrese suy cupo: ", SwingConstants.CENTER);
@@ -69,10 +72,29 @@ public class PanelRegistro extends JPanel
 		add(txtCupoR);
 		
 		btnRegistroR = new JButton("Registrarse");
+		btnRegistroR.setActionCommand("Prueba boton registro");
 		add(btnRegistroR);
 		
 	
 	}
+	
+	public String getId() {
+        return txtIdR.getText();
+    }
 
+    public String getNombre() {
+        return txtNombreR.getText();
+    }
 
+    public String getContraseña() {
+        return txtContraseñaR.getText();
+    }
+
+    public String getCupo() {
+        return txtCupoR.getText();
+    }
+
+    public JButton getBotonRegistroCliente() {
+        return btnRegistroR;
+    }
 }

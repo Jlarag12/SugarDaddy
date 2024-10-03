@@ -10,6 +10,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import co.edu.unbosque.model.Cliente;
 import co.edu.unbosque.model.dto.ClienteDTO;
 
 
@@ -49,7 +50,6 @@ public class ArchivoClientes {
 			try {
 				entrada = new ObjectInputStream(new FileInputStream(ubicacionArchivo));
 				clientes  = (ArrayList<ClienteDTO>) entrada.readObject();
-				//clientes = MapHandler.convertirVeterinariaDTOtoVeterinaria(datos);
 			}catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}catch(ClassNotFoundException e) {

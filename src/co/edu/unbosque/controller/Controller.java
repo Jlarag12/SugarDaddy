@@ -1,21 +1,28 @@
 package co.edu.unbosque.controller;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import co.edu.unbosque.model.dto.ClienteDTO;
 import co.edu.unbosque.model.persistence.ArchivoClientes;
 import co.edu.unbosque.model.persistence.ArchivoLog;
 import co.edu.unbosque.model.persistence.ArchivoParejas;
 import co.edu.unbosque.view.VentanaPrincipal;
 
-public class Controller {
+public class Controller implements ActionListener{
 
-	VentanaPrincipal ventana = new  VentanaPrincipal();
 	ArchivoLog archivo = new ArchivoLog();
 	ArchivoClientes archivoClientes = new ArchivoClientes();
 	ArchivoParejas arcparejas = new ArchivoParejas();
+	VentanaPrincipal ventana;
+	
+	public Controller() {
+		ventana = new VentanaPrincipal();
+		asignarOyentes();
+	}
+	
+	public void asignarOyentes() {
+		ventana.getPanelR().getBotonRegistroCliente().addActionListener(this);
+	}
 	
 	public void escribirArchivoPlano() {
 		archivo.escribirArchivo("Ingresar Texto");
@@ -24,8 +31,18 @@ public class Controller {
 	public String leerArchivo() {
 		return archivo.leerArchivo();
 	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		System.out.println(e.getActionCommand());
+		
+		String mensaje = ventana.getPanelR().getContraseña();
+		
+		System.out.println("mensaje: " + mensaje);
+	}
 	
-	public void escribirArchivoBinario() {
+	/*public void escribirArchivoBinario() {
 		
 		ArrayList<ClienteDTO> clientes = new ArrayList<>();
 		ClienteDTO cliente = new ClienteDTO();
@@ -48,6 +65,6 @@ public class Controller {
 	public String leerArchivoProp() throws IOException {
 		arcparejas.leerArchivo();
 		return arcparejas.getDatos().getProperty("vv");
-	}
-
+<<<<<<< HEAD
+	}*/
 }

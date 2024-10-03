@@ -1,44 +1,110 @@
 package co.edu.unbosque.model.dao;
 
+import java.util.ArrayList;
+
 import co.edu.unbosque.model.Cliente;
+import co.edu.unbosque.model.dto.ClienteDTO;
 import co.edu.unbosque.model.persistence.ArchivoClientes;
+import co.edu.unbosque.model.utils.MapHandlerCliente;
 
-public class ClienteDAO implements InterfaceDAO<Cliente>{
 
-	ArchivoClientes archCliente;
+public class ClienteDAO implements InterfaceClienteDAO<Cliente> {
+
+    ArrayList<ClienteDTO> clientes;
+    ArchivoClientes archCliente;
+    
+    public ClienteDAO() {
+        archCliente = new ArchivoClientes();
+        ArrayList<ClienteDTO> listaClientes = archCliente.leerArchivo();
+        
+        if (listaClientes == null) {
+            clientes = new ArrayList<>();
+        } else {
+            clientes = new ArrayList<>();
+            for (ClienteDTO cliente : listaClientes) {
+                clientes.add(cliente);
+            }
+        }
+    }
+
+	@Override
+	public ArrayList<Cliente> consultar() {
+	    ArrayList<ClienteDTO> listaClientesDTO = archCliente.leerArchivo();
+	    ArrayList<Cliente> listaClientes = new ArrayList<>();
+	    
+	    for (ClienteDTO cliente : listaClientesDTO) {
+	        listaClientes.add(MapHandlerCliente.convertirClienteDTOACliente(cliente));
+	    }
+	    return listaClientes;
+	}
+
+	@Override
+	public boolean agregar(Cliente cliente) {
+	    
+	    Cliente encontrado = encontrar(cliente);
+	    
+	    if(encontrado == null) {
+	    	clientes.add(MapHandlerCliente.convertirClienteAClienteDTO(cliente));
+		    archCliente.escribirArchivo(clientes);
+		    return true;
+	    }
+	    
+	    return false;
+	}
 	
-	public ClienteDAO() {
-		archCliente = new ArchivoClientes();
+	@Override
+	public boolean eliminar(Cliente cliente) {
+	 
+		Cliente encontrado = encontrar(cliente); // Sigue usando el método encontrar
+	    if (encontrado != null) {
+	        clientes.remove(MapHandlerCliente.convertirClienteAClienteDTO(encontrado));
+	        archCliente.escribirArchivo(clientes);
+	        return true;
+	    }
+	    return false;
+	}
+	
+	@Override
+	public boolean actualizar(Cliente antiguoCliente, Cliente nuevoCliente) {
+
+		Cliente encontrado = encontrar(antiguoCliente);
+	    if (encontrado != null) {
+	        clientes.remove(MapHandlerCliente.convertirClienteAClienteDTO(antiguoCliente));
+	        ClienteDTO cliente = MapHandlerCliente.convertirClienteAClienteDTO(nuevoCliente);
+	        encontrado.setNombre(cliente.getNombre());
+	        encontrado.setCupo(cliente.getCupo());
+	        encontrado.setContrasena(cliente.getContrasena());
+	        clientes.add(MapHandlerCliente.convertirClienteAClienteDTO(encontrado));
+	        archCliente.escribirArchivo(clientes);
+	        return true;
+	    }
+	    return false;
+	}
+	
+	@Override
+	public Cliente encontrar(Cliente clienteBuscado) {
+        for (ClienteDTO cliente : clientes) {
+            if (cliente.getId() == clienteBuscado.getId()) {
+                return clienteBuscado;  
+            }
+        }
+        return null;
+    }
+
+	public ArrayList<ClienteDTO> getClientes() {
+		return clientes;
 	}
 
-
-	@Override
-	public String getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setClientes(ArrayList<ClienteDTO> clientes) {
+		this.clientes = clientes;
 	}
 
-	@Override
-	public boolean add(Cliente x) {
-		// TODO Auto-generated method stub
-		return false;
+	public ArchivoClientes getArchCliente() {
+		return archCliente;
 	}
 
-	@Override
-	public boolean delete(Cliente x) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean update(Cliente x, Cliente y) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public Cliente find(Cliente x) {
-		// TODO Auto-generated method stub
-		return null;
+	public void setArchCliente(ArchivoClientes archCliente) {
+		this.archCliente = archCliente;
 	}
 }
+

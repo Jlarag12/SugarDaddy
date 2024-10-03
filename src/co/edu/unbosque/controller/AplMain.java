@@ -5,11 +5,8 @@ import java.io.IOException;
 public class AplMain {
 
 	public static void main(String[] args) throws IOException {
-		System.out.println("Hola mundo, Suggar");
-		Controller controller = new Controller();
 		
-
-
+		Controller controller = new Controller();
 	}
 
 }
