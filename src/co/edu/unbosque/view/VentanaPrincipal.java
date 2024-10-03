@@ -32,11 +32,11 @@ public class VentanaPrincipal extends JFrame {
 	
 	public void inicializarComponentes()
 	{
-		/*panelU = new PanelUsuario();
-		getContentPane().add(panelU);*/
+		panelU = new PanelUsuario();
+		getContentPane().add(panelU);
 		
-		/*panelC = new PanelCliente();
-		getContentPane().add(panelC);*/
+		panelC = new PanelCliente();
+		getContentPane().add(panelC);
 		
 		PanelS = new PanelClienteSugar();
 		getContentPane().add(PanelS);

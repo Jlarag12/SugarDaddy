@@ -27,7 +27,7 @@ public class PanelClienteSugar extends JPanel
 	{
 		setLayout(new GridLayout(2,1));
 		setBackground(Color.white);
-		setBounds(20, 30, 450, 450);
+		setBounds(30, 60, 500, 470);
 		
 		inicializarPanel1();
 		inicializarPanel2();
@@ -92,7 +92,78 @@ public class PanelClienteSugar extends JPanel
         
 
 	}
-	
+
+	public JPanel getPanel1S() {
+		return panel1S;
+	}
+
+	public void setPanel1S(JPanel panel1s) {
+		panel1S = panel1s;
+	}
+
+	public JPanel getPanel2S() {
+		return panel2S;
+	}
+
+	public void setPanel2S(JPanel panel2s) {
+		panel2S = panel2s;
+	}
+
+	public JLabel getLblIngreParejaS() {
+		return lblIngreParejaS;
+	}
+
+	public void setLblIngreParejaS(JLabel lblIngreParejaS) {
+		this.lblIngreParejaS = lblIngreParejaS;
+	}
+
+	public JLabel getLblActuaParejaS() {
+		return lblActuaParejaS;
+	}
+
+	public void setLblActuaParejaS(JLabel lblActuaParejaS) {
+		this.lblActuaParejaS = lblActuaParejaS;
+	}
+
+	public JLabel getLblListaParejasS() {
+		return lblListaParejasS;
+	}
+
+	public void setLblListaParejasS(JLabel lblListaParejasS) {
+		this.lblListaParejasS = lblListaParejasS;
+	}
+
+	public JTextArea getTxtListaParejasS() {
+		return txtListaParejasS;
+	}
+
+	public void setTxtListaParejasS(JTextArea txtListaParejasS) {
+		this.txtListaParejasS = txtListaParejasS;
+	}
+
+	public JButton getBtnIngreParejaS() {
+		return btnIngreParejaS;
+	}
+
+	public void setBtnIngreParejaS(JButton btnIngreParejaS) {
+		this.btnIngreParejaS = btnIngreParejaS;
+	}
+
+	public JButton getBtnActuaParejaS() {
+		return btnActuaParejaS;
+	}
+
+	public void setBtnActuaParejaS(JButton btnActuaParejaS) {
+		this.btnActuaParejaS = btnActuaParejaS;
+	}
+
+	public JButton getBtnVolverS() {
+		return btnVolverS;
+	}
+
+	public void setBtnVolverS(JButton btnVolverS) {
+		this.btnVolverS = btnVolverS;
+	}
 	
 	
 }

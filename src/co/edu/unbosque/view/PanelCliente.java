@@ -22,8 +22,8 @@ public class PanelCliente extends JPanel
 	public PanelCliente() 
 	{
 		setLayout(new GridLayout(6,1));
-		setBackground(Color.white);
-		setBounds(20, 30, 450, 450);
+		setBackground(Color.green);
+		setBounds(30, 60, 500, 470);
 		inicializarComponentes();
 		
 		setVisible(false);
@@ -58,4 +58,54 @@ public class PanelCliente extends JPanel
 		add(btnVolverC);
 		
 	}
+
+	public JLabel getLblIdC() {
+		return lblIdC;
+	}
+
+	public void setLblIdC(JLabel lblIdC) {
+		this.lblIdC = lblIdC;
+	}
+
+	public JLabel getLblContraseñaC() {
+		return lblContraseñaC;
+	}
+
+	public void setLblContraseñaC(JLabel lblContraseñaC) {
+		this.lblContraseñaC = lblContraseñaC;
+	}
+
+	public JTextArea getTxtIdC() {
+		return txtIdC;
+	}
+
+	public void setTxtIdC(JTextArea txtIdC) {
+		this.txtIdC = txtIdC;
+	}
+
+	public JTextArea getTxtContraseñaC() {
+		return txtContraseñaC;
+	}
+
+	public void setTxtContraseñaC(JTextArea txtContraseñaC) {
+		this.txtContraseñaC = txtContraseñaC;
+	}
+
+	public JButton getBtnIngresarC() {
+		return btnIngresarC;
+	}
+
+	public void setBtnIngresarC(JButton btnIngresarC) {
+		this.btnIngresarC = btnIngresarC;
+	}
+
+	public JButton getBtnVolverC() {
+		return btnVolverC;
+	}
+
+	public void setBtnVolverC(JButton btnVolverC) {
+		this.btnVolverC = btnVolverC;
+	}
+	
+	
 }
