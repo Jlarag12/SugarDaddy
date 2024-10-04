@@ -24,16 +24,86 @@ public class Controller implements ActionListener{
 	}
 	
 	public void asignarOyentes() {
-		ventana.getPanelU().getBtnClienteU().addActionListener(e -> inicioCliente());
-		ventana.getPanelU().getBtnAdministradorU().addActionListener(e -> inicioAdmin() );
-		ventana.getPanelU().getBtnRegistrarseU().addActionListener(e -> inicioRegistro());
-		ventana.getPanelA().getBtnVolverA().addActionListener(e -> volverAlUsuario());
-		ventana.getPanelC().getBtnVolverC().addActionListener(e -> volverAlUsuario());
-		ventana.getPanelR().getBtnVolverR().addActionListener(e -> volverAlUsuario());
-		ventana.getPanelD().getBtnVolverD().addActionListener(e -> volverAlAdmin() );
-		ventana.getPanelS().getBtnVolverS().addActionListener(e -> volverAlCliente());
-		//ventana.getPanelC().getBtnIngresarC().addActionListener(e -> verificarCliente());
-		//ventana.getPanelA().getBtnIngresarA().addActionListener(e -> verificarAdmin());
+		ventana.getPanelU().getBtnClienteU().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				inicioCliente();
+				
+			}
+		});
+		ventana.getPanelU().getBtnAdministradorU().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				inicioAdmin();
+				
+			}
+		});
+		ventana.getPanelU().getBtnRegistrarseU().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				inicioRegistro();
+				
+			}
+		});
+		ventana.getPanelA().getBtnVolverA().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				volverAlUsuario();
+				
+			}
+		});
+		ventana.getPanelC().getBtnVolverC().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				volverAlUsuario();
+				
+			}
+		});
+		ventana.getPanelR().getBtnVolverR().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				volverAlUsuario();
+				
+			}
+		});
+		ventana.getPanelD().getBtnVolverD().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				volverAlAdmin();
+				
+			}
+		});
+		ventana.getPanelS().getBtnVolverS().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				volverAlCliente();
+				
+			}
+		});
+		/*
+		 * ventana.getPanelC().getBtnIngresarC().addActionListener(new ActionListener()
+		 * {
+		 * 
+		 * @Override public void actionPerformed(ActionEvent e) { verificarCliente();
+		 * 
+		 * } });
+		 */
+		/*
+		 * ventana.getPanelA().getBtnIngresarA().addActionListener(new ActionListener()
+		 * {
+		 * 
+		 * @Override public void actionPerformed(ActionEvent e) { verificarAdmin();
+		 * 
+		 * } });
+		 */ 
 		ventana.getPanelR().getBotonRegistroCliente().addActionListener(this);
 	}
 	
