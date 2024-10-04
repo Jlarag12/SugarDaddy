@@ -2,7 +2,7 @@ package co.edu.unbosque.view;
 
 import java.awt.Color;
 import java.awt.GridLayout;
-import java.awt.event.ActionListener;
+
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -10,23 +10,31 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.SwingContainer;
+
 
 public class PanelRegistro extends JPanel
 {
 
-	private JLabel lblIntruccionR,lblIdR,lblNombreR,lblContraseñaR,lblCupoR;
-	private JTextArea txtIdR,txtNombreR,txtCupoR;
+	private JLabel lblIntruccionR;
+	private JLabel lblIdR;
+	private JLabel lblNombreR;
+	private JLabel lblContraseñaR;
+	private JLabel lblCupoR;
+	private JTextArea txtIdR;
+	private JTextArea txtNombreR;
+	private JTextArea txtCupoR;
 	private JButton btnRegistroR;
+	private JButton btnVolverR;
 	private JTextField txtContraseñaR;
+
 	public PanelRegistro ()
 	{
-		setLayout(new GridLayout(10,1));
-		setBackground(Color.white);
-		setBounds(20, 30, 450, 450);
+		setLayout(new GridLayout(11,1));
+		setBackground(Color.green);
+		setBounds(45, 40, 470, 530);
 		inicializarComponentes();
 		
-		setVisible(true);
+		setVisible(false);
 	}
 	
 	public void inicializarComponentes()
@@ -73,8 +81,15 @@ public class PanelRegistro extends JPanel
 		btnRegistroR.setActionCommand("Prueba boton registro");
 		add(btnRegistroR);
 		
+		btnVolverR = new JButton("Volver");
+		btnVolverR.setActionCommand("Prueba boton volver");
+		btnVolverR.setOpaque(true);
+		btnVolverR.setBackground(Color.LIGHT_GRAY);
+		add(btnVolverR);
 	
 	}
+
+	
 	
 	public String getId() {
         return txtIdR.getText();
@@ -83,16 +98,105 @@ public class PanelRegistro extends JPanel
     public String getNombre() {
         return txtNombreR.getText();
     }
-
-    public String getContraseña() {
+	public String getContraseña() {
         return txtContraseñaR.getText();
     }
-
-    public String getCupo() {
+	public String getCupo() {
         return txtCupoR.getText();
     }
+	 public JButton getBotonRegistroCliente() {
+	        return btnRegistroR;
+	}
+	 
+	 
+	 
+	public JLabel getLblIntruccionR() {
+		return lblIntruccionR;
+	}
 
-    public JButton getBotonRegistroCliente() {
-        return btnRegistroR;
-    }
+	public void setLblIntruccionR(JLabel lblIntruccionR) {
+		this.lblIntruccionR = lblIntruccionR;
+	}
+
+	public JLabel getLblIdR() {
+		return lblIdR;
+	}
+
+	public void setLblIdR(JLabel lblIdR) {
+		this.lblIdR = lblIdR;
+	}
+
+	public JLabel getLblNombreR() {
+		return lblNombreR;
+	}
+
+	public void setLblNombreR(JLabel lblNombreR) {
+		this.lblNombreR = lblNombreR;
+	}
+
+	public JLabel getLblContraseñaR() {
+		return lblContraseñaR;
+	}
+
+	public void setLblContraseñaR(JLabel lblContraseñaR) {
+		this.lblContraseñaR = lblContraseñaR;
+	}
+
+	public JLabel getLblCupoR() {
+		return lblCupoR;
+	}
+
+	public void setLblCupoR(JLabel lblCupoR) {
+		this.lblCupoR = lblCupoR;
+	}
+
+	public JTextArea getTxtIdR() {
+		return txtIdR;
+	}
+
+	public void setTxtIdR(JTextArea txtIdR) {
+		this.txtIdR = txtIdR;
+	}
+
+	public JTextArea getTxtNombreR() {
+		return txtNombreR;
+	}
+
+	public void setTxtNombreR(JTextArea txtNombreR) {
+		this.txtNombreR = txtNombreR;
+	}
+
+	public JTextArea getTxtCupoR() {
+		return txtCupoR;
+	}
+
+	public void setTxtCupoR(JTextArea txtCupoR) {
+		this.txtCupoR = txtCupoR;
+	}
+
+	public JButton getBtnRegistroR() {
+		return btnRegistroR;
+	}
+
+	public void setBtnRegistroR(JButton btnRegistroR) {
+		this.btnRegistroR = btnRegistroR;
+	}
+
+	public JButton getBtnVolverR() {
+		return btnVolverR;
+	}
+
+	public void setBtnVolverR(JButton btnVolver) {
+		this.btnVolverR = btnVolver;
+	}
+
+	public JTextField getTxtContraseñaR() {
+		return txtContraseñaR;
+	}
+
+	public void setTxtContraseñaR(JTextField txtContraseñaR) {
+		this.txtContraseñaR = txtContraseñaR;
+	}
+	
+	
 }

@@ -12,14 +12,16 @@ import javax.swing.SwingConstants;
 public class PanelUsuario extends JPanel
 {
 	private JLabel lblTituloU;
-	private JButton btnClienteU,btnAdministradorU,btnRegistrarseU;
+	private JButton btnClienteU;
+	private JButton btnAdministradorU;
+	private JButton btnRegistrarseU;
 
 	
 	public PanelUsuario() 
 	{
 		setLayout(new GridLayout(4,1));
 		setBackground(Color.white);
-		setBounds(20, 30, 450, 450);
+		setBounds(50, 75, 450, 450);
 		inializarComponentes();
 		
 		setVisible(true);
@@ -41,5 +43,39 @@ public class PanelUsuario extends JPanel
 		btnRegistrarseU = new JButton("Registrarse");
 		add(btnRegistrarseU);
 	}
+
+	public JLabel getLblTituloU() {
+		return lblTituloU;
+	}
+
+	public void setLblTituloU(JLabel lblTituloU) {
+		this.lblTituloU = lblTituloU;
+	}
+
+	public JButton getBtnClienteU() {
+		return btnClienteU;
+	}
+
+	public void setBtnClienteU(JButton btnClienteU) {
+		this.btnClienteU = btnClienteU;
+	}
+
+	public JButton getBtnAdministradorU() {
+		return btnAdministradorU;
+	}
+
+	public void setBtnAdministradorU(JButton btnAdministradorU) {
+		this.btnAdministradorU = btnAdministradorU;
+	}
+
+	public JButton getBtnRegistrarseU() {
+		return btnRegistrarseU;
+	}
+
+	public void setBtnRegistrarseU(JButton btnRegistrarseU) {
+		this.btnRegistrarseU = btnRegistrarseU;
+	}
+	
+	
 
 }
