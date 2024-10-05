@@ -20,7 +20,7 @@ public class VentanaPrincipal extends JFrame {
 		setTitle("Sugar APP");
 		setSize(570, 650);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		getContentPane().setBackground(Color.green);
+		getContentPane().setBackground(new Color(36, 113, 163));
 		getContentPane().setLayout(null);
 		
 		inicializarComponentes();
@@ -52,12 +52,23 @@ public class VentanaPrincipal extends JFrame {
 		getContentPane().add(PanelD);
 	}
 	
-	public void mostrarMensajeError(String mensaje) {
+	public void mostrarMensajeError(String mensaje) 
+	{
         JOptionPane.showMessageDialog(this, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
     }
 
-    public void mostrarMensajeExito(String mensaje) {
+    public void mostrarMensajeExito(String mensaje) 
+    {
         JOptionPane.showMessageDialog(this, mensaje, "Éxito", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    public String ingresarDatosLong(String mensaje)
+    {
+    	return JOptionPane.showInputDialog(this, mensaje);
+    }
+    public String ingresarDatoString(String mensaje)
+    {
+    	return JOptionPane.showInputDialog(this, mensaje);
     }
 
 	public PanelUsuario getPanelU() {

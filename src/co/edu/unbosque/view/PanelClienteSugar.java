@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
 
 public class PanelClienteSugar extends JPanel
 {
@@ -18,10 +19,15 @@ public class PanelClienteSugar extends JPanel
 	private JLabel lblIngreParejaS;
 	private JLabel lblActuaParejaS;
 	private JLabel lblListaParejasS;
+	private JLabel lblIngreNombrePareS;
+	private JLabel lblIngreCupoPareS;
 	private JTextArea txtListaParejasS;
+	private JTextArea txtIngreNombrePareS;
+	private JTextArea txtIngreCupoPareS;
 	private JButton btnIngreParejaS;
 	private JButton btnActuaParejaS;
 	private JButton btnVolverS;
+	 
 	
 	public PanelClienteSugar()
 	{
@@ -42,19 +48,35 @@ public class PanelClienteSugar extends JPanel
 	public void inicializarPanel1()
 	{
 		panel1S  = new JPanel();
-		panel1S.setLayout(new GridLayout(2, 2));
+		panel1S.setLayout(new GridLayout(8, 1));
 		panel1S.setBackground(Color.green);
 		
 		
-		lblIngreParejaS = new JLabel("Agregar pareja: ");
+		lblIngreParejaS = new JLabel("Agregar pareja: ", SwingConstants.CENTER);
 		lblIngreParejaS.setOpaque(true);
 		lblIngreParejaS.setBackground(Color.green);
 		panel1S.add(lblIngreParejaS);
 		
-		btnIngreParejaS = new  JButton("Crea");
+		lblIngreNombrePareS = new JLabel("Digite el Nombre", SwingConstants.CENTER);
+		lblIngreNombrePareS.setOpaque(true);
+		lblIngreNombrePareS.setBackground(Color.green);
+		panel1S.add(lblIngreNombrePareS);
+		
+		txtIngreNombrePareS = new  JTextArea();
+		panel1S.add(txtIngreNombrePareS);
+		
+		lblIngreCupoPareS = new JLabel("Digite el cupo", SwingConstants.CENTER);
+		lblIngreCupoPareS.setOpaque(true);
+		lblIngreCupoPareS.setBackground(Color.green);
+		panel1S.add(lblIngreCupoPareS);
+		
+		txtIngreCupoPareS = new JTextArea();
+		panel1S.add(txtIngreCupoPareS);
+		
+		btnIngreParejaS = new  JButton("Crear");
 		panel1S.add(btnIngreParejaS);
 		
-		lblActuaParejaS = new JLabel("Actualizar el cupo de una pareja: ");
+		lblActuaParejaS = new JLabel("Actualizar el cupo de una pareja: ", SwingConstants.CENTER);
 		lblActuaParejaS.setOpaque(true);
 		lblActuaParejaS.setBackground(Color.green);
 		panel1S.add(lblActuaParejaS);
@@ -133,12 +155,44 @@ public class PanelClienteSugar extends JPanel
 		this.lblListaParejasS = lblListaParejasS;
 	}
 
+	public JLabel getLblIngreNombrePareS() {
+		return lblIngreNombrePareS;
+	}
+
+	public void setLblIngreNombrePareS(JLabel lblIngreNombrePareS) {
+		this.lblIngreNombrePareS = lblIngreNombrePareS;
+	}
+
+	public JLabel getLblIngreCupoPareS() {
+		return lblIngreCupoPareS;
+	}
+
+	public void setLblIngreCupoPareS(JLabel lblIngreCupoPareS) {
+		this.lblIngreCupoPareS = lblIngreCupoPareS;
+	}
+
 	public JTextArea getTxtListaParejasS() {
 		return txtListaParejasS;
 	}
 
 	public void setTxtListaParejasS(JTextArea txtListaParejasS) {
 		this.txtListaParejasS = txtListaParejasS;
+	}
+
+	public JTextArea getTxtIngreNombrePareS() {
+		return txtIngreNombrePareS;
+	}
+
+	public void setTxtIngreNombrePareS(JTextArea txtIngreNombrePareS) {
+		this.txtIngreNombrePareS = txtIngreNombrePareS;
+	}
+
+	public JTextArea getTxtIngreCupoPareS() {
+		return txtIngreCupoPareS;
+	}
+
+	public void setTxtIngreCupoPareS(JTextArea txtIngreCupoPareS) {
+		this.txtIngreCupoPareS = txtIngreCupoPareS;
 	}
 
 	public JButton getBtnIngreParejaS() {
@@ -164,6 +218,7 @@ public class PanelClienteSugar extends JPanel
 	public void setBtnVolverS(JButton btnVolverS) {
 		this.btnVolverS = btnVolverS;
 	}
+
 	
 	
 }
