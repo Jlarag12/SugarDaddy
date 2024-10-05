@@ -19,9 +19,11 @@ public class PanelAdminDatos extends JPanel
 	private JLabel lblEliminarD;
 	private JLabel lblActualizarD;
 	private JLabel lblMostrarD;
+	private JLabel lblBorrarD;
 	private JButton btnCrearD;
 	private JButton btnEliminarD;
 	private JButton btnActualizarD;
+	private JButton btnBorrarD;
 	private JButton btnVolverD;
 	
 	public PanelAdminDatos()
@@ -35,12 +37,12 @@ public class PanelAdminDatos extends JPanel
 		add(panel1D);
 		add(panel2D);
 		
-		setVisible(false);
+		setVisible(true);
 	}
 	public void inicializarPanel1() 
 	{
 		panel1D = new JPanel();
-		panel1D.setLayout(new GridLayout(3,2));
+		panel1D.setLayout(new GridLayout(4,2));
 		panel1D.setBackground(Color.green);
 		
 		
@@ -65,8 +67,16 @@ public class PanelAdminDatos extends JPanel
 		lblActualizarD.setBackground(Color.green);
 		panel1D.add(lblActualizarD);
 		
-		btnActualizarD = new JButton("Actulizar");
+		btnActualizarD = new JButton("Actualizar");
 		panel1D.add(btnActualizarD);
+		
+		lblEliminarD = new JLabel("Eliminar todas las parejas");
+		lblEliminarD.setOpaque(true);
+		lblEliminarD.setBackground(Color.green);
+		panel1D.add(lblEliminarD);
+		
+		btnBorrarD = new JButton("Borrar"); 
+		panel1D.add(btnBorrarD);
 	}
 	
 	public void inicializarPanel2()
@@ -137,6 +147,12 @@ public class PanelAdminDatos extends JPanel
 	public void setLblMostrarD(JLabel lblMostrarD) {
 		this.lblMostrarD = lblMostrarD;
 	}
+	public JLabel getLblBorrarD() {
+		return lblBorrarD;
+	}
+	public void setLblBorrarD(JLabel lblBorrarD) {
+		this.lblBorrarD = lblBorrarD;
+	}
 	public JButton getBtnCrearD() {
 		return btnCrearD;
 	}
@@ -155,6 +171,12 @@ public class PanelAdminDatos extends JPanel
 	public void setBtnActualizarD(JButton btnActualizarD) {
 		this.btnActualizarD = btnActualizarD;
 	}
+	public JButton getBtnBorrarD() {
+		return btnBorrarD;
+	}
+	public void setBtnBorrarD(JButton btnBorrarD) {
+		this.btnBorrarD = btnBorrarD;
+	}
 	public JButton getBtnVolverD() {
 		return btnVolverD;
 	}
@@ -162,7 +184,4 @@ public class PanelAdminDatos extends JPanel
 		this.btnVolverD = btnVolverD;
 	}
 	
-	
-	
-
 }

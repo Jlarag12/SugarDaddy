@@ -1,9 +1,12 @@
 package co.edu.unbosque.controller;
 
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 
 import co.edu.unbosque.model.Admin;
+import co.edu.unbosque.model.Cliente;
 import co.edu.unbosque.model.facade.Facade;
 import co.edu.unbosque.model.persistence.ArchivoClientes;
 import co.edu.unbosque.model.persistence.ArchivoLog;
@@ -89,6 +92,38 @@ public class Controller implements ActionListener{
 			}
 		});
 		/*
+		 * ventana.getPanelD().getBtnBorrarD().addActionListener(new ActionListener() {
+		 * 
+		 * @Override public void actionPerformed(ActionEvent e) { borrarParejasAdmin();
+		 * 
+		 * } });
+		 */
+		/*
+		 * ventana.getPanelD().getBtnActualizarD().addActionListener(new
+		 * ActionListener() {
+		 * 
+		 * @Override public void actionPerformed(ActionEvent e) {
+		 * actualizarClienteAdmin();
+		 * 
+		 * } });
+		 */
+		/*
+		 * ventana.getPanelD().getBtnEliminarD().addActionListener(new ActionListener()
+		 * {
+		 * 
+		 * @Override public void actionPerformed(ActionEvent e) {
+		 * eliminarClienteAdmin();
+		 * 
+		 * } });
+		 */
+		/*
+		 * ventana.getPanelD().getBtnCrearD().addActionListener(new ActionListener() {
+		 * 
+		 * @Override public void actionPerformed(ActionEvent e) { crearClienteAdmin();
+		 * 
+		 * } });
+		 */
+		/*
 		 * ventana.getPanelC().getBtnIngresarC().addActionListener(new ActionListener()
 		 * {
 		 * 
@@ -104,6 +139,7 @@ public class Controller implements ActionListener{
 		 * 
 		 * } });
 		 */ 
+		
 		ventana.getPanelR().getBotonRegistroCliente().addActionListener(this);
 	}
 	
@@ -145,6 +181,98 @@ public class Controller implements ActionListener{
 		ventana.getPanelC().setVisible(true);
 		System.out.println("Cambio de panel manejo del cliente a credenciales del cliente");
 	}
+	 /*public void borrarParejasAdmin() 
+	  {
+	        try {
+	            List<Cliente> clientes = facade.obtenerTodosLosClientes();
+	            for (Cliente cliente : clientes) {
+	                cliente.setPareja(null); // Asumo que la logica hay un setparejas que llame el archivo parejas y lo limpie
+	            }
+	            boolean guardado = facade.guardarClientes(clientes);
+	            if (guardado) {
+	                ventana.mostrarMensajeExito("Todas las parejas han sido borradas ");
+	            } else {
+	                ventana.mostrarMensajeError("Ocurrio un error al borrar ");
+	            }
+	        } catch (FileNotFoundException e) {
+	            ventana.mostrarMensajeError("Ocurrió un error al borrar ");
+	        }
+	    }*/
+	/*public void actualizarClienteAdmin() 
+	 {
+        try {
+            long id = Long.parseLong(ventana.ingresarDatosLong("Ingrese el ID del cliente a actualizar "));
+            String nombre = ventana.ingresarDatoString("Ingrese el nombre del cliente a actualizar ");
+            String nuevaContrasena = ventana.ingresarDatoString("Ingrese la nueva contraseña ");
+            long nuevoCupo = Long.parseLong(ventana.ingresarDatosLong("Ingrese el nuevo cupo "));
+
+            Cliente clienteAntiguo = new Cliente();
+            clienteAntiguo.setId(id);
+            clienteAntiguo.setNombre(nombre);
+
+            Cliente clienteNuevo = new Cliente();
+            clienteNuevo.setId(id);
+            clienteNuevo.setNombre(nombre);
+            clienteNuevo.setContrasena(nuevaContrasena);
+            clienteNuevo.setCupo(nuevoCupo);
+
+            boolean actualizado = facade.actualizarCliente(clienteAntiguo, clienteNuevo);
+
+            if (actualizado) {
+                ventana.mostrarMensajeExito("Cliente actualizado exitosamente ");
+            } else {
+                ventana.mostrarMensajeError("El cliente no existe ");
+            }
+        } catch (NumberFormatException e) {
+            ventana.mostrarMensajeError("Datos inválidos, verificar que se ingresen solo numeros en id y cupo");
+        }
+    }*/
+	/*public void eliminarClienteAdmin() 
+	{
+        try {
+            long id = Long.parseLong(ventana.ingresarDatosLong("Ingrese el ID "));
+            String nombre = ventana.ingresarDatoString("Ingrese el nombre ");
+
+            Cliente cliente = new Cliente();
+            cliente.setId(id);
+            cliente.setNombre(nombre);
+
+            boolean eliminado = facade.eliminar(cliente);
+
+            if (eliminado) {
+                ventana.mostrarMensajeExito("Cliente eliminado exitosamente ");
+            } else {
+                ventana.mostrarMensajeError("El cliente no existe ");
+            }
+        } catch (NumberFormatException e) {
+            ventana.mostrarMensajeError("Datos inválidos, verificar que se ingresen solo numeros en id");
+        }
+	}*/
+	 /*public void crearClienteAdmin() 
+	  {
+	        try {
+	            long id = Long.parseLong(ventana.ingresarDatosLong("Ingrese el ID"));
+	            String nombre = ventana.ingresarDatoString("Ingrese el nombre ");
+	            String contrasena = ventana.ingresarDatoString("Ingrese la contraseña");
+	            long cupo = Long.parseLong(ventana.ingresarDatosLong("Ingrese el Cupo"));
+
+	            Cliente cliente = new Cliente();
+	            cliente.setId(id);
+	            cliente.setNombre(nombre);
+	            cliente.setContrasena(contrasena);
+	            cliente.setCupo(cupo);
+
+	            boolean creado = facade.crearCliente(cliente);
+
+	            if (creado) {
+	                ventana.mostrarMensajeExito("Cliente creado exitosamente ");
+	            } else {
+	                ventana.mostrarMensajeError("El cliente ya existe ");
+	            }
+	        } catch (NumberFormatException e) {
+	            ventana.mostrarMensajeError("Datos inválidos, verificar que se ingresen solo numeros en id y cupo");
+	        }
+	    }*/
 	/*public void verificarAdmin()
 	{
 		try {
