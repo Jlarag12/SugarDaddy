@@ -259,11 +259,11 @@ public class Controller implements ActionListener{
 	        ventana.mostrarMensajeError("Datos inválidos, verificar que se ingresen solo numeros en cupo");
 	    }
 	}*/
-	/*private void crearParejaCliente() 
+	private void crearParejaCliente() 
 	{
 	    try {
-	        String nombrePareja = ventana.ingresarDatoString("Ingrese el nombre de la pareja:");
-	        long cupoAsignado = Long.parseLong(ventana.ingresarDatosLong("Ingrese el cupo asignado a la pareja:"));
+	    	String nombrePareja = ventana.getPanelS().getTxtIngreNombrePareS().getText();
+	        long cupoAsignado = Long.parseLong(ventana.getPanelS().getTxtIngreCupoPareS().getText());
 
 	        //Asumo que cliente Actual almacena la secion de las credenciales ingresadas del cliente y crea las variables del mismo.
 	        Cliente clienteActual = obtenerClienteActual(); 
@@ -281,7 +281,7 @@ public class Controller implements ActionListener{
 	    } catch (NumberFormatException e) {
 	        ventana.mostrarMensajeError("Datos inválidos, verificar que se ingresen solo numeros en cupo");
 	    }
-	}*/
+	}
 	 /*public void borrarParejasAdmin() 
 	  {
 	        try {
