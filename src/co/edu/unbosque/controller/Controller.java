@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 
 import co.edu.unbosque.model.Admin;
 import co.edu.unbosque.model.Cliente;
+import co.edu.unbosque.model.Pareja;
 import co.edu.unbosque.model.facade.Facade;
 import co.edu.unbosque.model.persistence.ArchivoClientes;
 import co.edu.unbosque.model.persistence.ArchivoLog;
@@ -14,7 +15,8 @@ import co.edu.unbosque.model.persistence.ArchivoParejas;
 import co.edu.unbosque.view.VentanaPrincipal;
 
 public class Controller implements ActionListener{
-
+//En los metodos declaro la varible cliente con diferentes nombres porque no estoy seguro de donde sale la infomacion de cada uno.
+	//En los metodos el modelo Cliente tiene 3 nombre cliente, clienteAntiguo y clienteActual, seria cambiar de donde se saca la informacion.
 	ArchivoLog archivo = new ArchivoLog();
 	//Facade facade = new Facade();
 	ArchivoClientes archivoClientes = new ArchivoClientes();
@@ -91,6 +93,23 @@ public class Controller implements ActionListener{
 				
 			}
 		});
+		/*
+		 * ventana.getPanelS().getBtnActuaParejaS().addActionListener(new
+		 * ActionListener() {
+		 * 
+		 * @Override public void actionPerformed(ActionEvent e) {
+		 * actualizarParejaCliente();
+		 * 
+		 * } });
+		 */
+		/*
+		 * ventana.getPanelS().getBtnIngreParejaS().addActionListener(new
+		 * ActionListener() {
+		 * 
+		 * @Override public void actionPerformed(ActionEvent e) { crearParejaCliente();
+		 * 
+		 * } });
+		 */
 		/*
 		 * ventana.getPanelD().getBtnBorrarD().addActionListener(new ActionListener() {
 		 * 
@@ -181,6 +200,54 @@ public class Controller implements ActionListener{
 		ventana.getPanelC().setVisible(true);
 		System.out.println("Cambio de panel manejo del cliente a credenciales del cliente");
 	}
+	/*private void actualizarParejaCliente() {
+	    try {
+	        String nombrePareja = ventana.ingresarDatoString("Ingrese el nombre de la pareja a actualizar:");
+	        long nuevoCupo = Long.parseLong(ventana.ingresarDatosLong("Ingrese el nuevo cupo asignado a la pareja:"));
+
+	        // Asumiendo que el cliente actual está almacenado en alguna variable de sesión o similar
+	        Cliente clienteActual = obtenerClienteActual(); // Implementa este método según tu lógica
+
+	        Pareja parejaAntigua = new Pareja();
+	        parejaAntigua.setNombre(nombrePareja);
+
+	        Pareja parejaNueva = new Pareja();
+	        parejaNueva.setNombre(nombrePareja);
+	        parejaNueva.setCupo(nuevoCupo);
+
+	        boolean actualizado = facade.actualizarPareja(parejaAntigua, parejaNueva, clienteActual);
+
+	        if (actualizado) {
+	            ventana.mostrarMensajeExito("Pareja actualizada exitosamente.");
+	        } else {
+	            ventana.mostrarMensajeError("No se pudo actualizar la pareja.");
+	        }
+	    } catch (NumberFormatException e) {
+	        ventana.mostrarMensajeError("Datos inválidos. Por favor, intente de nuevo.");
+	    }
+	}*/
+	/*private void crearParejaCliente() {
+	    try {
+	        String nombrePareja = ventana.ingresarDatoString("Ingrese el nombre de la pareja:");
+	        long cupoAsignado = Long.parseLong(ventana.ingresarDatosLong("Ingrese el cupo asignado a la pareja:"));
+
+	        //Asumo que cliente Actual almacena la secion de las credenciales ingresadas del cliente y crea las variables del mismo.
+	        Cliente clienteActual = obtenerClienteActual(); 
+
+	        Pareja pareja = new Pareja();
+	        pareja.setNombre(nombrePareja);
+
+	        boolean asignado = facade.asignarParejaACliente(clienteActual, pareja, cupoAsignado);
+
+	        if (asignado) {
+	            ventana.mostrarMensajeExito("Pareja creada y asignada exitosamente.");
+	        } else {
+	            ventana.mostrarMensajeError("No se pudo asignar la pareja.");
+	        }
+	    } catch (NumberFormatException e) {
+	        ventana.mostrarMensajeError("Datos inválidos. Por favor, intente de nuevo.");
+	    }
+	}*/
 	 /*public void borrarParejasAdmin() 
 	  {
 	        try {

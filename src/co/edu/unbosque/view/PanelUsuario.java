@@ -20,11 +20,11 @@ public class PanelUsuario extends JPanel
 	public PanelUsuario() 
 	{
 		setLayout(new GridLayout(4,1));
-		setBackground(Color.white);
+		setBackground(new Color(36, 113, 163));
 		setBounds(50, 75, 450, 450);
 		inializarComponentes();
 		
-		setVisible(false);
+		setVisible(true);
 		
 	}
 	

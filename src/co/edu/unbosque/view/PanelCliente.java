@@ -1,4 +1,4 @@
-package co.edu.unbosque.view;
+	package co.edu.unbosque.view;
 
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -22,7 +22,7 @@ public class PanelCliente extends JPanel
 	public PanelCliente() 
 	{
 		setLayout(new GridLayout(6,1));
-		setBackground(Color.green);
+		setBackground(new Color(36, 113, 163));
 		setBounds(30, 60, 500, 470);
 		inicializarComponentes();
 		
@@ -35,7 +35,7 @@ public class PanelCliente extends JPanel
 		
 		lblIdC = new JLabel("Ingrese su ID: ", SwingConstants.CENTER);
 		lblIdC.setOpaque(true);
-		lblIdC.setBackground(Color.green);
+		lblIdC.setBackground(new Color(36, 113, 163));
 		add(lblIdC);
 		
 		txtIdC = new JTextArea();
@@ -43,7 +43,7 @@ public class PanelCliente extends JPanel
 		
 		lblContraseñaC = new JLabel("Ingrese si Contraseña:", SwingConstants.CENTER);
 		lblContraseñaC.setOpaque(true);
-		lblContraseñaC.setBackground(Color.green);
+		lblContraseñaC.setBackground(new Color(36, 113, 163));
 		add(lblContraseñaC);
 		
 		txtContraseñaC = new JTextArea();

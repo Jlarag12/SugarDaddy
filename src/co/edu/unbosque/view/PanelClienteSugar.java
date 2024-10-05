@@ -49,17 +49,17 @@ public class PanelClienteSugar extends JPanel
 	{
 		panel1S  = new JPanel();
 		panel1S.setLayout(new GridLayout(8, 1));
-		panel1S.setBackground(Color.green);
+		panel1S.setBackground(new Color(36, 113, 163));
 		
 		
 		lblIngreParejaS = new JLabel("Agregar pareja: ", SwingConstants.CENTER);
 		lblIngreParejaS.setOpaque(true);
-		lblIngreParejaS.setBackground(Color.green);
+		lblIngreParejaS.setBackground(new Color(36, 113, 163));
 		panel1S.add(lblIngreParejaS);
 		
 		lblIngreNombrePareS = new JLabel("Digite el Nombre", SwingConstants.CENTER);
 		lblIngreNombrePareS.setOpaque(true);
-		lblIngreNombrePareS.setBackground(Color.green);
+		lblIngreNombrePareS.setBackground(new Color(36, 113, 163));
 		panel1S.add(lblIngreNombrePareS);
 		
 		txtIngreNombrePareS = new  JTextArea();
@@ -67,7 +67,7 @@ public class PanelClienteSugar extends JPanel
 		
 		lblIngreCupoPareS = new JLabel("Digite el cupo", SwingConstants.CENTER);
 		lblIngreCupoPareS.setOpaque(true);
-		lblIngreCupoPareS.setBackground(Color.green);
+		lblIngreCupoPareS.setBackground(new Color(36, 113, 163));
 		panel1S.add(lblIngreCupoPareS);
 		
 		txtIngreCupoPareS = new JTextArea();
@@ -78,7 +78,7 @@ public class PanelClienteSugar extends JPanel
 		
 		lblActuaParejaS = new JLabel("Actualizar el cupo de una pareja: ", SwingConstants.CENTER);
 		lblActuaParejaS.setOpaque(true);
-		lblActuaParejaS.setBackground(Color.green);
+		lblActuaParejaS.setBackground(new Color(36, 113, 163));
 		panel1S.add(lblActuaParejaS);
 		
 		btnActuaParejaS = new JButton("Actualiza");
@@ -90,11 +90,11 @@ public class PanelClienteSugar extends JPanel
 	{
 		panel2S = new JPanel();
 		panel2S.setLayout(new GridLayout(3,1));
-		panel2S.setBackground(Color.green);
+		panel2S.setBackground(new Color(36, 113, 163));
 		
 		lblListaParejasS = new JLabel("Estas son tus parejas actuales");
 		lblListaParejasS.setOpaque(true);
-		lblListaParejasS.setBackground(Color.green);
+		lblListaParejasS.setBackground(new Color(36, 113, 163));
 		panel2S.add(lblListaParejasS);
 		
 		txtListaParejasS = new JTextArea();

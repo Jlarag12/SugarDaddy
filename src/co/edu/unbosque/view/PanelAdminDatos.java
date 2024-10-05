@@ -29,7 +29,7 @@ public class PanelAdminDatos extends JPanel
 	public PanelAdminDatos()
 	{
 		setLayout(new GridLayout(2,1));
-		setBackground(Color.green);
+		setBackground(new Color(36, 113, 163));
 		setBounds(30, 60, 500, 470);
 		inicializarPanel1();
 		inicializarPanel2();
@@ -37,18 +37,18 @@ public class PanelAdminDatos extends JPanel
 		add(panel1D);
 		add(panel2D);
 		
-		setVisible(true);
+		setVisible(false);
 	}
 	public void inicializarPanel1() 
 	{
 		panel1D = new JPanel();
 		panel1D.setLayout(new GridLayout(4,2));
-		panel1D.setBackground(Color.green);
+		panel1D.setBackground(new Color(36, 113, 163));
 		
 		
 		lblCrearD = new JLabel("Crear un cliente nuevo: ");
 		lblCrearD.setOpaque(true);
-		lblCrearD.setBackground(Color.green);
+		lblCrearD.setBackground(new Color(36, 113, 163));
 		panel1D.add(lblCrearD);
 		
 		btnCrearD = new JButton("Crear");
@@ -56,7 +56,7 @@ public class PanelAdminDatos extends JPanel
 		
 		lblEliminarD = new JLabel("Eliminar cliente: ");
 		lblEliminarD.setOpaque(true);
-		lblEliminarD.setBackground(Color.green);
+		lblEliminarD.setBackground(new Color(36, 113, 163));
 		panel1D.add(lblEliminarD);
 	
 		btnEliminarD = new JButton("Eliminar");
@@ -64,7 +64,7 @@ public class PanelAdminDatos extends JPanel
 		
 		lblActualizarD = new JLabel("Actulizar datos de algun cliente: ");
 		lblActualizarD.setOpaque(true);
-		lblActualizarD.setBackground(Color.green);
+		lblActualizarD.setBackground(new Color(36, 113, 163));
 		panel1D.add(lblActualizarD);
 		
 		btnActualizarD = new JButton("Actualizar");
@@ -72,7 +72,7 @@ public class PanelAdminDatos extends JPanel
 		
 		lblEliminarD = new JLabel("Eliminar todas las parejas");
 		lblEliminarD.setOpaque(true);
-		lblEliminarD.setBackground(Color.green);
+		lblEliminarD.setBackground(new Color(36, 113, 163));
 		panel1D.add(lblEliminarD);
 		
 		btnBorrarD = new JButton("Borrar"); 
@@ -83,11 +83,11 @@ public class PanelAdminDatos extends JPanel
 	{
 		panel2D = new JPanel();
 		panel2D.setLayout(new GridLayout(3,1));
-		panel2D.setBackground(Color.green);
+		panel2D.setBackground(new Color(36, 113, 163));
 		
 		lblMostrarD = new JLabel("Todos los clientes registrados: ");
 		lblMostrarD.setOpaque(true);
-		lblMostrarD.setBackground(Color.green);
+		lblMostrarD.setBackground(new Color(36, 113, 163));
 		panel2D.add(lblMostrarD);
 		
 		txtClientesD = new JTextArea();

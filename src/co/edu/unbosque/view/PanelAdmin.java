@@ -21,7 +21,7 @@ public class PanelAdmin extends JPanel
 	public PanelAdmin() 
 	{
 		setLayout(new GridLayout(6,1));
-		setBackground(Color.green);
+		setBackground(new Color(36, 113, 163));
 		setBounds(30, 60, 500, 470);
 		inicialiarComponentes();
 		
@@ -34,7 +34,7 @@ public class PanelAdmin extends JPanel
 		
 		lblIdA = new JLabel("Ingrese su ID: ", SwingConstants.CENTER);
 		lblIdA.setOpaque(true);
-		lblIdA.setBackground(Color.green);
+		lblIdA.setBackground(new Color(36, 113, 163));
 		add(lblIdA);
 		
 		txtIdA = new JTextArea();
@@ -42,7 +42,7 @@ public class PanelAdmin extends JPanel
 		
 		lblContraseñaA = new JLabel("Ingrese si Contraseña:", SwingConstants.CENTER);
 		lblContraseñaA.setOpaque(true);
-		lblContraseñaA.setBackground(Color.green);
+		lblContraseñaA.setBackground(new Color(36, 113, 163));
 		add(lblContraseñaA);
 		
 		txtContraseñaA = new JTextArea();

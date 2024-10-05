@@ -30,7 +30,7 @@ public class PanelRegistro extends JPanel
 	public PanelRegistro ()
 	{
 		setLayout(new GridLayout(11,1));
-		setBackground(Color.green);
+		setBackground(new Color(36, 113, 163));
 		setBounds(45, 40, 470, 530);
 		inicializarComponentes();
 		
@@ -42,12 +42,12 @@ public class PanelRegistro extends JPanel
 		
 		lblIntruccionR = new JLabel("Digite el ID, nombre, contraseña y cupo de su cuenta" +"\n"+ "en las casillas establecidas");
 		lblIntruccionR.setOpaque(true);
-		lblIntruccionR.setBackground(Color.green);
+		lblIntruccionR.setBackground(new Color(36, 113, 163));
 		add(lblIntruccionR);
 		
 		lblIdR = new JLabel("Ingrese su ID: ", SwingConstants.CENTER);
 		lblIdR.setOpaque(true);
-		lblIdR.setBackground(Color.green);
+		lblIdR.setBackground(new Color(36, 113, 163));
 		add(lblIdR);
 		
 		txtIdR = new JTextArea();
@@ -55,7 +55,7 @@ public class PanelRegistro extends JPanel
 		
 		lblNombreR = new JLabel("Ingrese su nombre: ", SwingConstants.CENTER);
 		lblNombreR.setOpaque(true);
-		lblNombreR.setBackground(Color.green);
+		lblNombreR.setBackground(new Color(36, 113, 163));
 		add(lblNombreR);
 		
 		txtNombreR = new JTextArea();
@@ -63,7 +63,7 @@ public class PanelRegistro extends JPanel
 		
 		lblContraseñaR = new JLabel("Ingrese su contraseña: ", SwingConstants.CENTER);
 		lblContraseñaR.setOpaque(true);
-		lblContraseñaR.setBackground(Color.green);
+		lblContraseñaR.setBackground(new Color(36, 113, 163));
 		add(lblContraseñaR);
 		
 		txtContraseñaR = new JTextField();
@@ -71,7 +71,7 @@ public class PanelRegistro extends JPanel
 		
 		lblCupoR = new JLabel("Ingrese suy cupo: ", SwingConstants.CENTER);
 		lblCupoR.setOpaque(true);
-		lblCupoR.setBackground(Color.green);
+		lblCupoR.setBackground(new Color(36, 113, 163));
 		add(lblCupoR);
 		
 		txtCupoR = new JTextArea();
