@@ -94,6 +94,15 @@ public class Controller implements ActionListener{
 			}
 		});
 		/*
+		 * ventana.getPanelR().getBtnRegistroR().addActionListener(new ActionListener()
+		 * {
+		 * 
+		 * @Override public void actionPerformed(ActionEvent e) {
+		 * registrarClienteRegistro();
+		 * 
+		 * } });
+		 */
+		/*
 		 * ventana.getPanelS().getBtnActuaParejaS().addActionListener(new
 		 * ActionListener() {
 		 * 
@@ -200,7 +209,31 @@ public class Controller implements ActionListener{
 		ventana.getPanelC().setVisible(true);
 		System.out.println("Cambio de panel manejo del cliente a credenciales del cliente");
 	}
-	/*private void actualizarParejaCliente() {
+	 /*private void registrarClienteRegistro() 
+	 {
+	        try {
+	            long id = Long.parseLong(ventana.getPanelR().getTxtIdR().getText());
+	            String nombre = ventana.getPanelR().getTxtNombreR().getText();
+	            long cupo = Long.parseLong(ventana.getPanelR().getTxtCupoR().getText());
+
+	            Cliente cliente = new Cliente();
+	            cliente.setId(id);
+	            cliente.setNombre(nombre);
+	            cliente.setCupo(cupo);
+
+	            boolean creado = facade.crearCliente(cliente);
+
+	            if (creado) {
+	                ventana.mostrarMensajeExito("Cliente registrado exitosamente.");
+	            } else {
+	                ventana.mostrarMensajeError("El cliente ya existe.");
+	            }
+	        } catch (NumberFormatException e) {
+	            ventana.mostrarMensajeError("Datos inválidos, verificar que se ingresen solo numeros en id y cupo");
+	        }
+	    }*/
+	  /*private void actualizarParejaCliente() 
+	  {
 	    try {
 	        String nombrePareja = ventana.ingresarDatoString("Ingrese el nombre de la pareja a actualizar:");
 	        long nuevoCupo = Long.parseLong(ventana.ingresarDatosLong("Ingrese el nuevo cupo asignado a la pareja:"));
@@ -223,10 +256,11 @@ public class Controller implements ActionListener{
 	            ventana.mostrarMensajeError("No se pudo actualizar la pareja.");
 	        }
 	    } catch (NumberFormatException e) {
-	        ventana.mostrarMensajeError("Datos inválidos. Por favor, intente de nuevo.");
+	        ventana.mostrarMensajeError("Datos inválidos, verificar que se ingresen solo numeros en cupo");
 	    }
 	}*/
-	/*private void crearParejaCliente() {
+	/*private void crearParejaCliente() 
+	{
 	    try {
 	        String nombrePareja = ventana.ingresarDatoString("Ingrese el nombre de la pareja:");
 	        long cupoAsignado = Long.parseLong(ventana.ingresarDatosLong("Ingrese el cupo asignado a la pareja:"));
@@ -245,7 +279,7 @@ public class Controller implements ActionListener{
 	            ventana.mostrarMensajeError("No se pudo asignar la pareja.");
 	        }
 	    } catch (NumberFormatException e) {
-	        ventana.mostrarMensajeError("Datos inválidos. Por favor, intente de nuevo.");
+	        ventana.mostrarMensajeError("Datos inválidos, verificar que se ingresen solo numeros en cupo");
 	    }
 	}*/
 	 /*public void borrarParejasAdmin() 
