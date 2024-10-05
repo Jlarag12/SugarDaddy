@@ -41,7 +41,7 @@ public class PanelClienteSugar extends JPanel
 		add(panel1S);
 		add(panel2S);
 		
-		setVisible(false);
+		setVisible(true);
 		
 	}
 	
