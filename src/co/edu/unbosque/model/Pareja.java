@@ -17,4 +17,10 @@ public class Pareja extends Usuario{
 	public void setAsignacion(long asignacion) {
 		this.asignacion = asignacion;
 	}
+	@Override
+	public String toString() {
+		return "Pareja [ID= " + getId() + ", Nombre=" + getNombre() + ", asignacion=" + asignacion + "]";
+	}
+	
+	
 }

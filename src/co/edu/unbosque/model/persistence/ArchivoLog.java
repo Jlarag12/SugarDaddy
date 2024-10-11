@@ -11,14 +11,17 @@ import java.util.List;
 
 public class ArchivoLog {
 	
-	private File archivoJuego;
+	private File archivoLog;
 	
 	public ArchivoLog() {
-		archivoJuego = new File("archivos/logstransacciones.txt");
+		if(archivoLog == null) {
+			archivoLog = new File("archivos/logstransacciones.txt");
+		}
+		
 	}
 	
 	public ArchivoLog(File archivoJuego) {
-		this.archivoJuego = archivoJuego;
+		this.archivoLog = archivoJuego;
 	}
 	
 	public String leerArchivo() {
@@ -26,11 +29,11 @@ public class ArchivoLog {
 		InputStreamReader isr;
 		BufferedReader linea; 
 		try {
-			fis = new FileInputStream(archivoJuego);
+			fis = new FileInputStream(archivoLog);
 			isr = new InputStreamReader(fis);
 			linea = new BufferedReader(isr);
 			
-			if(archivoJuego.exists()) {
+			if(archivoLog.exists()) {
 				String linea_arch = linea.readLine();
 				String archivo_total = linea_arch;
 				while(linea_arch != null) {
@@ -51,7 +54,7 @@ public class ArchivoLog {
 	
 	public String escribirArchivo(String frase) {
 		try {
-			FileWriter lineatx = new FileWriter(archivoJuego, true);
+			FileWriter lineatx = new FileWriter(archivoLog, true);
 			lineatx.write(frase + "\r\n");
 			lineatx.close();
 			return "Linea ingresada con exito";

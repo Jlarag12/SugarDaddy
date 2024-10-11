@@ -19,9 +19,11 @@ public class PanelClienteSugar extends JPanel
 	private JLabel lblIngreParejaS;
 	private JLabel lblActuaParejaS;
 	private JLabel lblListaParejasS;
+	private JLabel lblIngreIdPareS;
 	private JLabel lblIngreNombrePareS;
 	private JLabel lblIngreCupoPareS;
 	private JTextArea txtListaParejasS;
+	private JTextArea txtIngreIdPareS;
 	private JTextArea txtIngreNombrePareS;
 	private JTextArea txtIngreCupoPareS;
 	private JButton btnIngreParejaS;
@@ -48,14 +50,21 @@ public class PanelClienteSugar extends JPanel
 	public void inicializarPanel1()
 	{
 		panel1S  = new JPanel();
-		panel1S.setLayout(new GridLayout(8, 1));
+		panel1S.setLayout(new GridLayout(11, 1));
 		panel1S.setBackground(new Color(36, 113, 163));
-		
 		
 		lblIngreParejaS = new JLabel("Agregar pareja: ", SwingConstants.CENTER);
 		lblIngreParejaS.setOpaque(true);
 		lblIngreParejaS.setBackground(new Color(36, 113, 163));
 		panel1S.add(lblIngreParejaS);
+		
+		lblIngreIdPareS = new JLabel("Digite el Id", SwingConstants.CENTER);
+		lblIngreIdPareS.setOpaque(true);
+		lblIngreIdPareS.setBackground(new Color(36, 113, 163));
+		panel1S.add(lblIngreIdPareS);
+		
+		txtIngreIdPareS = new  JTextArea();
+		panel1S.add(txtIngreIdPareS);
 		
 		lblIngreNombrePareS = new JLabel("Digite el Nombre", SwingConstants.CENTER);
 		lblIngreNombrePareS.setOpaque(true);
@@ -219,6 +228,19 @@ public class PanelClienteSugar extends JPanel
 		this.btnVolverS = btnVolverS;
 	}
 
-	
-	
+	public JLabel getLblIngreIdPareS() {
+		return lblIngreIdPareS;
+	}
+
+	public void setLblIngreIdPareS(JLabel lblIngreIdPareS) {
+		this.lblIngreIdPareS = lblIngreIdPareS;
+	}
+
+	public JTextArea getTxtIngreIdPareS() {
+		return txtIngreIdPareS;
+	}
+
+	public void setTxtIngreIdPareS(JTextArea txtIngreIdPareS) {
+		this.txtIngreIdPareS = txtIngreIdPareS;
+	}
 }

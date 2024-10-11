@@ -17,4 +17,9 @@ public class Cliente extends Usuario{
 	public void setCupo(long cupo) {
 		this.cupo = cupo;
 	}
+	
+	@Override
+    public String toString() {
+        return "ID: " + getId() + ", Nombre: " + getNombre() + ", Numero Tarjeta: " + (numeroTarjeta != null ? numeroTarjeta : "N/A") + ", Cupo: " + cupo + ", Contraseña" + getContrasena();
+    }
 }

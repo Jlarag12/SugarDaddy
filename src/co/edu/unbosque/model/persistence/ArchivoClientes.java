@@ -35,7 +35,6 @@ public class ArchivoClientes {
 	public void escribirArchivo(ArrayList<ClienteDTO> clientes) {
 		try {
 			salida = new ObjectOutputStream(new FileOutputStream(ubicacionArchivo));
-			//ArrayList<ClienteDTO> datos = MapHandler.convertirVeterinariatoVeterinariaDTO(clientes);
 			salida.writeObject(clientes);
 			salida.close();
 		}catch (FileNotFoundException e) {
@@ -44,6 +43,33 @@ public class ArchivoClientes {
 			e.printStackTrace();
 		}
 	}
+
+	/*public void escribirArchivo(ArrayList<ClienteDTO> nuevosClientes) {
+	    ArrayList<ClienteDTO> clientesExistentes = new ArrayList<>();
+
+	    // Leer clientes existentes del archivo
+	    try {
+	        ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(ubicacionArchivo));
+	        clientesExistentes = (ArrayList<ClienteDTO>) entrada.readObject();
+	        entrada.close();
+	    } catch (FileNotFoundException e) {
+	        // Si el archivo no existe, está bien; simplemente lo crearemos más adelante.
+	    } catch (IOException | ClassNotFoundException e) {
+	        e.printStackTrace();
+	    }
+
+	    // Agregar nuevos clientes a la lista existente
+	    clientesExistentes.addAll(nuevosClientes);
+
+	    // Escribir la lista actualizada de vuelta al archivo
+	    try {
+	        ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(ubicacionArchivo));
+	        salida.writeObject(clientesExistentes);
+	        salida.close();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}*/
 	
 	public ArrayList<ClienteDTO> leerArchivo(){
 		ArrayList<ClienteDTO> clientes = null;

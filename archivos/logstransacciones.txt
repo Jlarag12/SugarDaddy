@@ -1,2 +1,5 @@
-Ingresar Texto
-Ingresar Texto
+El cupo de la tarjeta no está en el rando definido: 2000000000
+Se agrega el cliente con los siguientes datos: ID: 123, Nombre: Silvio, # Tarjeta: 9975856917781692, Contraseña: s10, Cupo: 20000000
+Se consulta las parejas que tiene el cliente con id: 123
+El cupo de la tarjeta no está en el rando definido: 2000000000
+Se agrega el cliente con los siguientes datos: ID: 1111, Nombre: Luis, # Tarjeta: 1021831944902338, Contraseña: l10, Cupo: 20000000

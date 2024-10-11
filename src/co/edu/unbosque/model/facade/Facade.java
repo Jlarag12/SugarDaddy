@@ -1,5 +1,7 @@
 package co.edu.unbosque.model.facade;
 
+import java.util.ArrayList;
+
 import co.edu.unbosque.model.Admin;
 import co.edu.unbosque.model.Cliente;
 import co.edu.unbosque.model.Pareja;
@@ -16,14 +18,15 @@ public class Facade {
 		clienteDAO = new ClienteDAO();
 		parejaDAO = new ParejaDAO();
 		if(admin == null) {
+			admin = new Admin();
 			admin.setId(12345);
 			admin.setContrasena("pass1234");
 			admin.setNombre("Admin");
 		}
-		/*admin.setId(12345);
-		admin.setContrasena("pass1234");
-		admin.setNombre("Admin");
-		*/
+	}
+	
+	public ArrayList<Cliente> listarClientes(){
+		return clienteDAO.consultar();
 	}
 		
 	public Cliente encontrarCliente(Cliente cliente) {
@@ -47,14 +50,30 @@ public class Facade {
 		return clienteDAO.eliminar(cliente);
 	}
 
-	public boolean asignarParejaACliente(Cliente cliente, Pareja pareja, long cupoAsignado) {
-		return parejaDAO.asignarParejaACliente(cliente, pareja, cupoAsignado);
+	public boolean asignarParejaACliente(long id, Pareja pareja) {
+		return parejaDAO.asignarParejaACliente(id, pareja);
 	}
 	
 	public boolean actualizar(Pareja parejaAntigua, Pareja parejaNueva, Cliente cliente) {
 		return parejaDAO.actualizar(parejaAntigua, parejaNueva, cliente);
 	}
-	/*public boolean verificarCliente(int id, String contraseña) {
+	public boolean verificarCliente(int id, String contraseña){
         return clienteDAO.verificarCliente(id, contraseña);
-    }*/
+    }
+	
+	public ArrayList<Pareja> listarParejas(Long idCliente) {
+		return parejaDAO.consultar(idCliente);
+	}
+	
+	public Pareja encontrarPareja(Pareja pareja) {
+		return parejaDAO.encontrar(pareja);
+	}
+	
+	public boolean consultarParejaRegistrada(long idCliente, long idPareja) {
+		return parejaDAO.consultarParejaRegistrada(idCliente, idPareja);
+	}
+	
+	public boolean eliminarArchivo() {
+		return parejaDAO.eliminarArchivo();
+	}
 }

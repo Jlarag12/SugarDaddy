@@ -25,7 +25,7 @@ public class ArchivoParejas {
 		this.arc = archivo;
 	}
 		
-	public ArrayList<ParejaDTO> leerParejasPorCliente(long clienteId) throws IOException {
+	public ArrayList<ParejaDTO> leerParejasPorCliente(long clienteId) {
 		ArrayList<ParejaDTO> parejas = new ArrayList<>();
         try {
             FileInputStream in = new FileInputStream(arc);
@@ -44,7 +44,7 @@ public class ArchivoParejas {
                 }
             }
         } catch (IOException e) {
-            throw new IOException("Formato inválido o archivo no encontrado.");
+        	e.printStackTrace();
         }
         return parejas;
     }
@@ -73,6 +73,7 @@ public class ArchivoParejas {
 	
 	public void escribirPareja(Long clienteId, ParejaDTO parejaDTO) {
         try {
+        	archivoP.load(new FileInputStream(arc));
             String key = clienteId + "_" + parejaDTO.getId();  // Clave: clienteID_parejaID
             String valor = parejaDTO.getId() + "," + parejaDTO.getNombre() + "," + parejaDTO.getEdad() + "," + parejaDTO.getAsignacion();
             archivoP.setProperty(key, valor);
@@ -81,6 +82,32 @@ public class ArchivoParejas {
             e.printStackTrace();
         }
     }
+	
+	public boolean reiniciarArchivoParejas() {
+		FileOutputStream fos = null;
+		try {
+	    	
+	        arc.exists();
+	        arc.delete();
+	        arc.createNewFile();
+	        archivoP.clear();
+	        
+	        fos = new FileOutputStream(arc);
+	        archivoP.store(fos, null);
+	        
+	        return true;
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }finally {
+	    	try {
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+	    }
+	    
+	    return false;
+	}
 
 	public File getArc() {
 		return arc;
